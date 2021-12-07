@@ -28,3 +28,11 @@
     -fx-background-color: #fff;
     
 }
+
+#panelglobal{
+    -fx-background-image: url("hsp.jpg");
+}
+#left_panel{
+    -fx-background-image: url("wp.jpg");
+    -fx-background-size: cover;
+}

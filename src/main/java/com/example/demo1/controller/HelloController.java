@@ -50,7 +50,6 @@ public class HelloController {
         JSONParser jsonParser = new JSONParser();
         try (FileReader reader = new FileReader("C:\\Users\\otman\\IdeaProjects\\demo1\\src\\main\\resources\\com\\example\\demo1\\json\\employees.json"))
         {
-            //Read JSON file
             Object obj = jsonParser.parse(reader);
 
             JSONArray employeeList = (JSONArray) obj;
@@ -66,7 +65,7 @@ public class HelloController {
                     break;
                 } else if (email.equals(this.input_email.getText()) && password.equals(this.input_password.getText())) {
                     message.setText("Success!");
-                    m.changeScene("dashboard.fxml");
+                    m.changeScene("panelControlle.fxml");
                     break;
                 } else {
                     message.setText("Invalide login ,Try again !");
@@ -74,11 +73,7 @@ public class HelloController {
             }
 
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
+        } catch (FileNotFoundException | ParseException e) {
             e.printStackTrace();
         }
     }

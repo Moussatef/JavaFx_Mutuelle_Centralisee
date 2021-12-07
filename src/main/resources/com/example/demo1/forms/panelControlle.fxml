@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="panelglobal" prefHeight="575.0" prefWidth="1134.0" style="-fx-background-color: #77A0A9;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.controller.HelloController">
+   <children>
+      <AnchorPane prefHeight="575.0" prefWidth="241.0" style="-fx-background-color: #6F7D8C;">
+         <children>
+            <Pane id="left_panel" prefHeight="575.0" prefWidth="248.0">
+               <children>
+                  <Button layoutY="541.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="248.0" style="-fx-background-color: #6F7D8C; -fx-border-color: #4B2E39;" text="Exit" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <TabPane layoutX="248.0" prefHeight="575.0" prefWidth="889.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab style="-fx-background-color: #fff;" text="Home">
+            <content>
+              <AnchorPane id="panle" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="334.0" layoutY="35.0" text="Welcome Back" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="37.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab style="-fx-background-color: #fff;" text="Show Client">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="799.0">
+                     <children>
+                        <TableView layoutX="4.0" layoutY="64.0" prefHeight="417.0" prefWidth="882.0">
+                          <columns>
+                            <TableColumn prefWidth="120.99710083007812" text="badge number " />
+                            <TableColumn prefWidth="101.99581909179688" text="Company name" />
+                              <TableColumn prefWidth="110.004150390625" text="CIN" />
+                              <TableColumn prefWidth="103.00579833984375" text="First name" />
+                              <TableColumn prefWidth="103.00579833984375" text="Last name" />
+                              <TableColumn prefWidth="103.00579833984375" text="phone number" />
+                              <TableColumn prefWidth="103.00579833984375" text="Email" />
+                              <TableColumn prefWidth="125.99652099609375" text="Address" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab style="-fx-background-color: #fff;" text="Add Client">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="54.0" layoutY="21.0" prefHeight="407.0" prefWidth="816.0" style="-fx-background-color: #9b9b9b8a;">
+                           <children>
+                              <Button fx:id="btnSave" layoutX="532.0" layoutY="359.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="269.0" style="-fx-background-color: #fff;" text="Save" />
+                              <Label layoutX="14.0" layoutY="76.0" text="Badge Number">
+                                 <font>
+                                    <Font name="Calibri" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="inpBadge" layoutX="139.0" layoutY="72.0" />
+                              <TextField fx:id="inpCompany" layoutX="139.0" layoutY="127.0" />
+                              <Label layoutX="14.0" layoutY="131.0" text="Company Name">
+                                 <font>
+                                    <Font name="Calibri" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="187.0" text="Work start date">
+                                 <font>
+                                    <Font name="Calibri" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="inpDateStart" layoutX="139.0" layoutY="183.0" />
+                              <TextField fx:id="inpAddress" layoutX="139.0" layoutY="230.0" />
+                              <Label layoutX="14.0" layoutY="234.0" text="Address">
+                                 <font>
+                                    <Font name="Calibri" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="inpCin" layoutX="561.0" layoutY="75.0" />
+                              <Label layoutX="451.0" layoutY="79.0" text="CIN">
+                                 <font>
+                                    <Font name="Calibri" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="451.0" layoutY="134.0" text="First Name">
+                                 <font>
+                                    <Font name="Calibri" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="inpFname" layoutX="561.0" layoutY="130.0" />
+                              <Label layoutX="451.0" layoutY="188.0" text="Last Name">
+                                 <font>
+                                    <Font name="Calibri" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="inpLname" layoutX="561.0" layoutY="184.0" />
+                              <TextField fx:id="inpEmail" layoutX="561.0" layoutY="234.0" />
+                              <Label layoutX="451.0" layoutY="238.0" text="Email">
+                                 <font>
+                                    <Font name="Calibri" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
