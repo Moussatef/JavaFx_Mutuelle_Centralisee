@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="800.0" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.controller.HelloController">
+   <children>
+      <AnchorPane id="panel-left" prefHeight="585.0" prefWidth="407.0" style="-fx-background-color: #ddd;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
+      <AnchorPane id="panel-right" layoutX="400.0" prefHeight="585.0" prefWidth="400.0" style="-fx-border-color: #ffff;" stylesheets="@../assets/style.css">
+         <children>
+            <Button id="btn_login" fx:id="btn_login" alignment="CENTER" contentDisplay="CENTER" layoutX="39.0" layoutY="405.0" lineSpacing="6.0" mnemonicParsing="false" onAction="#userLogIn" prefHeight="25.0" prefWidth="322.0" stylesheets="@../assets/style.css" text="Login" textAlignment="CENTER" textFill="#6b6b6b" underline="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Label blendMode="MULTIPLY" cacheHint="SCALE" layoutX="90.0" layoutY="36.0" text="Login To Continue" textAlignment="CENTER" textFill="#868686">
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor>
+            </Label>
+            <PasswordField fx:id="input_password" layoutX="32.0" layoutY="306.0" prefHeight="39.0" prefWidth="322.0" promptText="Password" style="-fx-border-radius: 15px;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </PasswordField>
+            <TextField fx:id="input_email" focusTraversable="false" layoutX="32.0" layoutY="193.0" prefHeight="39.0" prefWidth="322.0" promptText="exampel@email.com" stylesheets="@../assets/style.css">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Label layoutX="32.0" layoutY="158.0" text="Email" textFill="#5e5e5e">
+               <font>
+                  <Font name="Tahoma" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="273.0" text="Password" textFill="#757575">
+               <font>
+                  <Font name="Tahoma" size="16.0" />
+               </font>
+            </Label>
+            <Separator layoutX="93.0" layoutY="86.0" prefHeight="3.0" prefWidth="220.0" />
+            <Label fx:id="message" blendMode="MULTIPLY" cacheHint="SCALE" layoutX="122.0" layoutY="372.0" text="" textAlignment="CENTER" textFill="#e34919">
+               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn_exit" alignment="CENTER" contentDisplay="CENTER" layoutX="37.0" layoutY="455.0" lineSpacing="6.0" mnemonicParsing="false" onAction="#onExitClick" prefHeight="25.0" prefWidth="322.0" stylesheets="@../assets/style.css" text="Exit" textAlignment="CENTER" textFill="#d32d6d" underline="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
