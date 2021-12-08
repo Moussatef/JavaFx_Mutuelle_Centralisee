@@ -4,24 +4,14 @@ public class Client {
     private String badgeNumber;
     private String cin;
     private String passport;
-    private String Fname;
-    private String Lname;
+    private String firstName;
+    private String lastName;
     private String phoneNumber;
     private String email;
     private String address;
     private String companyName;
 
-    public Client(String badgeNumber, String cin, String passport, String fname, String lname, String phoneNumber, String email, String address, String companyName) {
-        this.badgeNumber = badgeNumber;
-        this.cin = cin;
-        this.passport = passport;
-        Fname = fname;
-        Lname = lname;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.address = address;
-        this.companyName = companyName;
-    }
+
 
     public String getBadgeNumber() {
         return badgeNumber;
@@ -47,21 +37,8 @@ public class Client {
         this.passport = passport;
     }
 
-    public String getFname() {
-        return Fname;
-    }
 
-    public void setFname(String fname) {
-        Fname = fname;
-    }
 
-    public String getLname() {
-        return Lname;
-    }
-
-    public void setLname(String lname) {
-        Lname = lname;
-    }
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -93,5 +70,21 @@ public class Client {
 
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }

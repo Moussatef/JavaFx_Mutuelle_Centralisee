@@ -30,12 +30,6 @@ public class HelloController {
     @FXML
     private Label message;
 
-    @FXML
-    protected void onHelloButtonClick() {
-        System.out.println("Welcome to JavaFX Application!");
-    }
-
-
     public void onExitClick(ActionEvent event) {
         Stage stage = (Stage) btn_exit.getScene().getWindow();
         stage.close();
