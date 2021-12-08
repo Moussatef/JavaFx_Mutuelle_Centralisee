@@ -51,9 +51,9 @@ public class PanelController {
 
 
     public void saveInfo(){
-
-
         msgBadg.setText(badgeCk());
+        msgCompany.setText(companyCk());
+        msgAdrress.setText(addressCk());
 
     }
 
@@ -65,8 +65,8 @@ public class PanelController {
     }
 
     public String companyCk(){
-        if( inpCompany.getText().length() < 10 || inpCompany.getText().isEmpty()){
-            return "Badge must be 10 characters !!";
+        if( inpCompany.getText().length() > 50   || inpCompany.getText().isEmpty()){
+            return "not accept !!";
         }
         return "";
     }
@@ -77,10 +77,32 @@ public class PanelController {
         return "";
     }
     public String cinCk(){
-        if(  inpBadge.getText().isEmpty()){
-            return "you must be enter address !!";
+        if( inpCin.getText().isEmpty() || !inpCin.getText().matches("[a-zA-Z]{2}\\d{6}")){
+            return "cin not valide!!";
         }
         return "";
+    }
+    public String passportCk(){
+        if( inpCin.getText().isEmpty() || !inpCin.getText().matches("[a-zA-Z]{2}\\d{7}")){
+            return "cin not valide!!";
+        }
+        return "";
+    }
+    public void cinInp(){
+        inpCin.visibleProperty().setValue(true);
+        lbCin.visibleProperty().setValue(true);
+
+        inpPasport.visibleProperty().setValue(false);
+        lbPassport.visibleProperty().setValue(false);
+
+    }
+    public void passInp(){
+        inpPasport.visibleProperty().setValue(true);
+        lbPassport.visibleProperty().setValue(true);
+
+        inpCin.visibleProperty().setValue(false);
+        lbCin.visibleProperty().setValue(false);
+
     }
 
 

@@ -171,7 +171,7 @@
                               <Label fx:id="msgEmail" layoutX="561.0" layoutY="256.0" />
                               <DatePicker fx:id="inpDateStart" layoutX="133.0" layoutY="182.0" prefHeight="25.0" prefWidth="205.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0;" />
                               <TextArea fx:id="inpAddress" layoutX="132.0" layoutY="226.0" prefHeight="122.0" prefWidth="208.0" />
-                              <RadioButton fx:id="checkCin" layoutX="22.0" layoutY="367.0" mnemonicParsing="false" text="CIN" textFill="WHITE">
+                              <RadioButton onAction="#cinInp" fx:id="checkCin" layoutX="22.0" layoutY="367.0" mnemonicParsing="false" text="CIN" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -179,7 +179,7 @@
                                     <ToggleGroup fx:id="idn" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="checkPasport" layoutX="131.0" layoutY="367.0" mnemonicParsing="false" text="Pasport" textFill="WHITE" toggleGroup="$idn">
+                              <RadioButton onAction="#passInp"  fx:id="checkPasport" layoutX="131.0" layoutY="367.0" mnemonicParsing="false" text="Pasport" textFill="WHITE" toggleGroup="$idn">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
