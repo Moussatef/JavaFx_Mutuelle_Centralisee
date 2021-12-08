@@ -1,10 +1,7 @@
 package com.example.demo1.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class PanelController {
     @FXML
@@ -14,7 +11,7 @@ public class PanelController {
     @FXML
     private TextField inpCompany;
     @FXML
-    private TextField inpAddress;
+    private TextArea inpAddress;
     @FXML
     private TextField inpCin;
     @FXML
@@ -41,6 +38,40 @@ public class PanelController {
     private Label msgEmail;
     @FXML
     private DatePicker inpDateStart;
+
+
+    public void saveInfo(){
+
+
+        msgBadg.setText(badgeCk());
+
+    }
+
+    public String badgeCk(){
+        if( inpBadge.getText().length() < 10 || inpBadge.getText().isEmpty()){
+            return "Badge must be 10 characters !!";
+        }
+        return "";
+    }
+
+    public String companyCk(){
+        if( inpCompany.getText().length() < 10 || inpCompany.getText().isEmpty()){
+            return "Badge must be 10 characters !!";
+        }
+        return "";
+    }
+    public String addressCk(){
+        if(  inpAddress.getText().isEmpty()){
+            return "you must be enter address !!";
+        }
+        return "";
+    }
+    public String cinCk(){
+        if(  inpBadge.getText().isEmpty()){
+            return "you must be enter address !!";
+        }
+        return "";
+    }
 
 
 }
