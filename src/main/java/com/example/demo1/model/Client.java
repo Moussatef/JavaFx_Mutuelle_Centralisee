@@ -1,5 +1,7 @@
 package com.example.demo1.model;
 
+import java.time.LocalDate;
+
 public class Client {
     private String badgeNumber;
     private String cin;
@@ -10,8 +12,22 @@ public class Client {
     private String email;
     private String address;
     private String companyName;
+    private LocalDate dateStart;
 
-
+    public Client(){
+    }
+    public Client(String badgeNumber, String cin, String passport, String firstName, String lastName, String phoneNumber, String email, String address, String companyName,LocalDate dateStart) {
+        this.badgeNumber = badgeNumber;
+        this.cin = cin;
+        this.passport = passport;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+        this.companyName = companyName;
+        this.setDateStart(dateStart);
+    }
 
     public String getBadgeNumber() {
         return badgeNumber;
@@ -86,5 +102,13 @@ public class Client {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public LocalDate getDateStart() {
+        return dateStart;
+    }
+
+    public void setDateStart(LocalDate dateStart) {
+        this.dateStart = dateStart;
     }
 }

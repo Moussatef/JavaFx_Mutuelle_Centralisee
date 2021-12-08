@@ -43,8 +43,7 @@ public class PanelController implements Initializable {
     private Label msgBadg ;
     @FXML
     private Label msgCompany;
-    @FXML
-    private Label msgWorkstart;
+
     @FXML
     private Label msgAdrress;
     @FXML
@@ -72,6 +71,17 @@ public class PanelController implements Initializable {
     @FXML
     private Label msgDate;
 
+    @FXML private TableView<Client> tableView;
+    @FXML private  TableColumn<Client,String> badge;
+    @FXML private  TableColumn<Client,String> company;
+    @FXML private  TableColumn<Client,String> cin;
+    @FXML private  TableColumn<Client,String> name;
+    @FXML private  TableColumn<Client,String> phone;
+    @FXML private  TableColumn<Client,String> email;
+    @FXML private  TableColumn<Client,String> address;
+    @FXML private  TableColumn<Client,String> dateStart;
+
+
     public int cmp = 0;
 
     private List<Client> clientList = new ArrayList<>();
@@ -92,11 +102,30 @@ public class PanelController implements Initializable {
         lbPhone.setText(phoneCk());
         msgDate.setText(dateCk());
 
+
+        if (checkCin.isSelected()){
+            msgCin.setText(cinCk());
+        }
+
+
+        if (checkPasport.isSelected())
+            msgCin.setText(passportCk());
+
+
+
         System.out.println(cmbN.getSelectionModel().getSelectedItem());
         if (cmp == 0){
-
-            clientList.add(new Client());
-
+            clientList.add(new Client(inpBadge.getText(),inpCin.getText(),inpPasport.getText(),inpFname.getText(),inpLname.getText(),cmbN.getSelectionModel().getSelectedItem()+"-"+inpPhone.getText(),inpEmail.getText(),inpAddress.getText(),inpCompany.getText(),inpDateStart.getValue()));
+            inpBadge.clear();
+            inpCin.clear();
+            inpPasport.clear();
+            inpPhone.clear();
+            inpEmail.clear();
+            inpCompany.clear();
+            inpAddress.clear();
+            inpDateStart.getEditor().clear();
+            inpFname.clear();
+            inpLname.clear();
         }
 
 
@@ -119,7 +148,7 @@ public class PanelController implements Initializable {
     }
 
     public String dateCk(){
-        if(  inpDateStart.getValue().toString().isEmpty()){
+        if(  inpDateStart.getValue() == null ){
             cmp++;
             return "you must be enter date start !!";
         }
@@ -171,8 +200,9 @@ public class PanelController implements Initializable {
         return "";
     }
     public String passportCk(){
-        if( inpCin.getText().isEmpty() || !inpCin.getText().matches("[a-zA-Z]{2}\\d{7}")){
-            return "cin is not valide!!";
+        if( inpPasport.getText().isEmpty() || !inpPasport.getText().matches("[a-zA-Z]{2}\\d{7}")){
+           cmp++;
+            return "Passport is not valide!!";
         }
         return "";
     }

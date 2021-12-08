@@ -7,13 +7,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="panelglobal" prefHeight="575.0" prefWidth="1134.0" style="-fx-background-color: #77A0A9;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.controller.PanelController">
+<AnchorPane id="panelglobal" prefHeight="695.0" prefWidth="1493.0" style="-fx-background-color: #77A0A9;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.controller.PanelController">
    <children>
       <AnchorPane prefHeight="575.0" prefWidth="241.0" style="-fx-background-color: #6F7D8C;">
          <children>
-            <Pane id="left_panel" prefHeight="575.0" prefWidth="248.0">
+            <Pane id="left_panel" prefHeight="695.0" prefWidth="248.0">
                <children>
-                  <Button fx:id="btn_exit" layoutY="541.0" mnemonicParsing="false" onAction="#onExitClick" prefHeight="34.0" prefWidth="248.0" style="-fx-background-color: #6F7D8C; -fx-border-color: #4B2E39;" text="Exit" textFill="WHITE">
+                  <Button fx:id="btn_exit" layoutY="653.0" mnemonicParsing="false" onAction="#onExitClick" prefHeight="34.0" prefWidth="248.0" style="-fx-background-color: #6F7D8C; -fx-border-color: #4B2E39;" text="Exit" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -25,7 +25,7 @@
             </Pane>
          </children>
       </AnchorPane>
-      <TabPane layoutX="248.0" prefHeight="575.0" prefWidth="889.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="248.0" prefHeight="575.0" prefWidth="1246.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab style="-fx-background-color: #fff;" text="Home">
             <content>
@@ -42,18 +42,18 @@
           </Tab>
           <Tab style="-fx-background-color: #fff;" text="Show Client">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="799.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="546.0" prefWidth="971.0">
                      <children>
-                        <TableView layoutX="4.0" layoutY="64.0" prefHeight="417.0" prefWidth="882.0">
+                        <TableView fx:id="tableView" layoutX="14.0" layoutY="65.0" prefHeight="466.0" prefWidth="1230.0">
                           <columns>
-                            <TableColumn prefWidth="120.99710083007812" text="badge number " />
-                            <TableColumn prefWidth="101.99581909179688" text="Company name" />
-                              <TableColumn prefWidth="110.004150390625" text="CIN" />
-                              <TableColumn prefWidth="103.00579833984375" text="First name" />
-                              <TableColumn prefWidth="103.00579833984375" text="Last name" />
-                              <TableColumn prefWidth="103.00579833984375" text="phone number" />
-                              <TableColumn prefWidth="103.00579833984375" text="Email" />
-                              <TableColumn prefWidth="125.99652099609375" text="Address" />
+                            <TableColumn fx:id="badge" prefWidth="120.99710083007812" text="badge number " />
+                            <TableColumn fx:id="company" prefWidth="121.0" text="Company name" />
+                              <TableColumn fx:id="cin" prefWidth="87.0" text="CIN" />
+                              <TableColumn fx:id="name" prefWidth="170.0" text="Name" />
+                              <TableColumn fx:id="phone" prefWidth="135.0" text="phone number" />
+                              <TableColumn fx:id="email" prefWidth="220.0" text="Email" />
+                              <TableColumn fx:id="address" prefWidth="189.0" text="Address" />
+                              <TableColumn fx:id="dateStart" prefWidth="186.0" text="Date start work" />
                           </columns>
                         </TableView>
                      </children>
@@ -95,7 +95,7 @@
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="inpCin" layoutX="73.0" layoutY="413.0" prefWidth="194.0" style="-fx-border-color: #fff; -fx-border-width: 0 0 1px 0; -fx-background-color: transparent;" visible="false" />
+                              <TextField fx:id="inpCin" layoutX="79.0" layoutY="414.0" prefHeight="26.0" prefWidth="196.0" style="-fx-border-color: #fff; -fx-border-width: 0 0 1px 0; -fx-background-color: transparent;" visible="false" />
                               <Label fx:id="lbCin" layoutX="14.0" layoutY="427.0" text="CIN" textFill="WHITE" visible="false">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
@@ -154,11 +154,6 @@
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="282.0" layoutY="423.0" text="*">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
                               <Label fx:id="message" layoutX="139.0" layoutY="363.0">
                                  <font>
                                     <Font name="Calibri" size="19.0" />
@@ -168,12 +163,12 @@
                               <Label fx:id="msgCompany" layoutX="139.0" layoutY="156.0" textFill="#f21313" />
                               <Label fx:id="msgWorkstart" layoutX="139.0" layoutY="209.0" textFill="#f21313" />
                               <Label fx:id="msgAdrress" layoutX="133.0" layoutY="355.0" prefHeight="17.0" textFill="#f21313" />
-                              <Label fx:id="msgCin" layoutX="561.0" layoutY="115.0" textFill="#f21313" />
+                              <Label fx:id="msgCin" layoutX="30.0" layoutY="457.0" textFill="#f21313" />
                               <Label fx:id="msgFname" layoutX="561.0" layoutY="183.0" textFill="#f21313" />
                               <Label fx:id="msgLname" layoutX="560.0" layoutY="238.0" textFill="#f21313" />
                               <Label fx:id="msgEmail" layoutX="561.0" layoutY="285.0" textFill="#f21313" />
                               <DatePicker fx:id="inpDateStart" layoutX="133.0" layoutY="182.0" prefHeight="25.0" prefWidth="205.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0;" />
-                              <TextArea fx:id="inpAddress" layoutX="132.0" layoutY="226.0" prefHeight="122.0" prefWidth="208.0" />
+                              <TextArea fx:id="inpAddress" layoutX="132.0" layoutY="232.0" prefHeight="122.0" prefWidth="208.0" />
                               <RadioButton fx:id="checkCin" layoutX="17.0" layoutY="375.0" mnemonicParsing="false" onAction="#cinInp" text="CIN" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
@@ -204,14 +199,14 @@
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="inpPasport" layoutX="73.0" layoutY="413.0" prefWidth="194.0" style="-fx-border-color: #fff; -fx-border-width: 0 0 1px 0; -fx-background-color: transparent;" visible="false" />
+                              <TextField fx:id="inpPasport" layoutX="96.0" layoutY="414.0" prefHeight="26.0" prefWidth="179.0" style="-fx-border-color: #fff; -fx-border-width: 0 0 1px 0; -fx-background-color: transparent;" visible="false" />
                               <Label layoutX="306.0" layoutY="14.0" text="ADD CLIENT FORM" textFill="WHITE" underline="true">
                                  <font>
                                     <Font name="Book Antiqua" size="30.0" />
                                  </font>
                               </Label>
                               <Label fx:id="lbPhone" layoutX="558.0" layoutY="123.0" textFill="#ee1717" />
-                              <Label fx:id="msgDate" layoutX="133.0" layoutY="209.0" />
+                              <Label fx:id="msgDate" layoutX="133.0" layoutY="209.0" textFill="#e81111" />
                            </children>
                         </Pane>
                      </children>
