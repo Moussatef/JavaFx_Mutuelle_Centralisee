@@ -13,10 +13,13 @@
          <children>
             <Pane id="left_panel" prefHeight="575.0" prefWidth="248.0">
                <children>
-                  <Button layoutY="541.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="248.0" style="-fx-background-color: #6F7D8C; -fx-border-color: #4B2E39;" text="Exit" textFill="WHITE">
+                  <Button fx:id="btn_exit" layoutY="541.0" mnemonicParsing="false" onAction="#onExitClick" prefHeight="34.0" prefWidth="248.0" style="-fx-background-color: #6F7D8C; -fx-border-color: #4B2E39;" text="Exit" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                </children>
             </Pane>
@@ -161,17 +164,17 @@
                                     <Font name="Calibri" size="19.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="msgBadg" layoutX="139.0" layoutY="101.0" />
-                              <Label fx:id="msgCompany" layoutX="139.0" layoutY="156.0" />
-                              <Label fx:id="msgWorkstart" layoutX="139.0" layoutY="209.0" />
-                              <Label fx:id="msgAdrress" layoutX="139.0" layoutY="256.0" />
-                              <Label fx:id="msgCin" layoutX="561.0" layoutY="101.0" />
-                              <Label fx:id="msgFname" layoutX="561.0" layoutY="156.0" />
-                              <Label fx:id="msgLname" layoutX="561.0" layoutY="209.0" />
-                              <Label fx:id="msgEmail" layoutX="561.0" layoutY="256.0" />
+                              <Label fx:id="msgBadg" layoutX="139.0" layoutY="101.0" textFill="#f21313" />
+                              <Label fx:id="msgCompany" layoutX="139.0" layoutY="156.0" textFill="#f21313" />
+                              <Label fx:id="msgWorkstart" layoutX="139.0" layoutY="209.0" textFill="#f21313" />
+                              <Label fx:id="msgAdrress" layoutX="133.0" layoutY="355.0" prefHeight="17.0" prefWidth="0.0" textFill="#f21313" />
+                              <Label fx:id="msgCin" layoutX="561.0" layoutY="101.0" textFill="#f21313" />
+                              <Label fx:id="msgFname" layoutX="561.0" layoutY="156.0" textFill="#f21313" />
+                              <Label fx:id="msgLname" layoutX="561.0" layoutY="209.0" textFill="#f21313" />
+                              <Label fx:id="msgEmail" layoutX="561.0" layoutY="256.0" textFill="#f21313" />
                               <DatePicker fx:id="inpDateStart" layoutX="133.0" layoutY="182.0" prefHeight="25.0" prefWidth="205.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0;" />
                               <TextArea fx:id="inpAddress" layoutX="132.0" layoutY="226.0" prefHeight="122.0" prefWidth="208.0" />
-                              <RadioButton onAction="#cinInp" fx:id="checkCin" layoutX="22.0" layoutY="367.0" mnemonicParsing="false" text="CIN" textFill="WHITE">
+                              <RadioButton fx:id="checkCin" layoutX="17.0" layoutY="375.0" mnemonicParsing="false" onAction="#cinInp" text="CIN" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -179,7 +182,7 @@
                                     <ToggleGroup fx:id="idn" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton onAction="#passInp"  fx:id="checkPasport" layoutX="131.0" layoutY="367.0" mnemonicParsing="false" text="Pasport" textFill="WHITE" toggleGroup="$idn">
+                              <RadioButton fx:id="checkPasport" layoutX="131.0" layoutY="375.0" mnemonicParsing="false" onAction="#passInp" text="Pasport" textFill="WHITE" toggleGroup="$idn">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -195,13 +198,18 @@
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <ComboBox fx:id="cmbN" editable="true" layoutX="554.0" layoutY="86.0" prefHeight="26.0" prefWidth="73.0" promptText="+212" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: #fff;" />
+                              <ComboBox fx:id="cmbN" layoutX="554.0" layoutY="88.0" prefHeight="26.0" prefWidth="73.0" promptText="+212" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: #fff;" />
                               <Label fx:id="lbPassport" layoutX="15.0" layoutY="426.0" text="Passport" textFill="WHITE" visible="false">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="inpPasport" layoutX="73.0" layoutY="413.0" prefWidth="194.0" style="-fx-border-color: #fff; -fx-border-width: 0 0 1px 0; -fx-background-color: transparent;" visible="false" />
+                              <Label layoutX="306.0" layoutY="14.0" text="ADD CLIENT FORM" textFill="WHITE" underline="true">
+                                 <font>
+                                    <Font name="Book Antiqua" size="30.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </Pane>
                      </children>
