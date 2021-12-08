@@ -15,6 +15,12 @@ public class PanelController {
     @FXML
     private TextField inpCin;
     @FXML
+    private TextField inpPasport;
+    @FXML
+    private RadioButton checkCin;
+    @FXML
+    private RadioButton checkPasport;
+    @FXML
     private TextField inpFname;
     @FXML
     private TextField inpLname;
@@ -38,6 +44,10 @@ public class PanelController {
     private Label msgEmail;
     @FXML
     private DatePicker inpDateStart;
+    @FXML
+    private Label lbPassport;
+    @FXML
+    private Label lbCin;
 
 
     public void saveInfo(){

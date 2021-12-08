@@ -63,7 +63,7 @@
                      <children>
                         <Pane layoutX="28.0" layoutY="21.0" prefHeight="511.0" prefWidth="842.0" style="-fx-background-color: #9b9b9b8a;">
                            <children>
-                              <Button id="btn_save" fx:id="btnSave" layoutX="532.0" layoutY="359.0" mnemonicParsing="false" onAction="#saveInfo" prefHeight="25.0" prefWidth="269.0" style="-fx-background-color: transparent; -fx-border-color: #fff;" text="Save" textFill="WHITE">
+                              <Button id="btn_save" fx:id="btnSave" layoutX="524.0" layoutY="410.0" mnemonicParsing="false" onAction="#saveInfo" prefHeight="25.0" prefWidth="269.0" style="-fx-background-color: transparent; -fx-border-color: #fff;" text="Save" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -92,8 +92,8 @@
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="inpCin" layoutX="73.0" layoutY="413.0" prefWidth="194.0" style="-fx-border-color: #fff; -fx-border-width: 0 0 1px 0; -fx-background-color: transparent;" />
-                              <Label layoutX="26.0" layoutY="417.0" text="CIN" textFill="WHITE">
+                              <TextField fx:id="inpCin" layoutX="73.0" layoutY="413.0" prefWidth="194.0" style="-fx-border-color: #fff; -fx-border-width: 0 0 1px 0; -fx-background-color: transparent;" visible="false" />
+                              <Label fx:id="lbCin" layoutX="14.0" layoutY="427.0" text="CIN" textFill="WHITE" visible="false">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
@@ -171,12 +171,15 @@
                               <Label fx:id="msgEmail" layoutX="561.0" layoutY="256.0" />
                               <DatePicker fx:id="inpDateStart" layoutX="133.0" layoutY="182.0" prefHeight="25.0" prefWidth="205.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0;" />
                               <TextArea fx:id="inpAddress" layoutX="132.0" layoutY="226.0" prefHeight="122.0" prefWidth="208.0" />
-                              <RadioButton layoutX="22.0" layoutY="367.0" mnemonicParsing="false" text="CIN" textFill="WHITE">
+                              <RadioButton fx:id="checkCin" layoutX="22.0" layoutY="367.0" mnemonicParsing="false" text="CIN" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="idn" />
+                                 </toggleGroup>
                               </RadioButton>
-                              <RadioButton layoutX="149.0" layoutY="367.0" mnemonicParsing="false" text="Pasport" textFill="WHITE">
+                              <RadioButton fx:id="checkPasport" layoutX="131.0" layoutY="367.0" mnemonicParsing="false" text="Pasport" textFill="WHITE" toggleGroup="$idn">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -193,6 +196,12 @@
                                  </font>
                               </Label>
                               <ComboBox fx:id="cmbN" editable="true" layoutX="554.0" layoutY="86.0" prefHeight="26.0" prefWidth="73.0" promptText="+212" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: #fff;" />
+                              <Label fx:id="lbPassport" layoutX="15.0" layoutY="426.0" text="Passport" textFill="WHITE" visible="false">
+                                 <font>
+                                    <Font name="Calibri" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="inpPasport" layoutX="73.0" layoutY="413.0" prefWidth="194.0" style="-fx-border-color: #fff; -fx-border-width: 0 0 1px 0; -fx-background-color: transparent;" visible="false" />
                            </children>
                         </Pane>
                      </children>
