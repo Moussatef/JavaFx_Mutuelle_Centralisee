@@ -71,11 +71,11 @@ public class Client {
     }
 
     public String getCompanyName() {
-        return companyName;
+        return company_name;
     }
 
     public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+        this.company_name = companyName;
     }
 
 
@@ -83,10 +83,10 @@ public class Client {
 
 
     public LocalDate getDateStart() {
-        return dateStart;
+        return hire_date;
     }
 
     public void setDateStart(LocalDate dateStart) {
-        this.dateStart = dateStart;
+        this.hire_date = dateStart;
     }
 }

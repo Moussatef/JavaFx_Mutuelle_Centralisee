@@ -141,7 +141,7 @@ public class PanelController implements Initializable {
 
         System.out.println(cmbN.getSelectionModel().getSelectedItem());
         if (cmp == 0){
-            clientList.add(new Client(inpBadge.getText(),inpCin.getText(),inpPasport.getText(),inpFname.getText(),inpLname.getText(),cmbN.getSelectionModel().getSelectedItem()+"-"+inpPhone.getText(),inpEmail.getText(),inpAddress.getText(),inpCompany.getText(),inpDateStart.getValue()));
+            //clientList.add(new Client(inpBadge.getText(),inpCin.getText(),inpPasport.getText(),inpFname.getText(),inpLname.getText(),cmbN.getSelectionModel().getSelectedItem()+"-"+inpPhone.getText(),inpEmail.getText(),inpAddress.getText(),inpCompany.getText(),inpDateStart.getValue()));
             fillTable();
 
             inpBadge.clear();

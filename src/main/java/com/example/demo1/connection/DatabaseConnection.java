@@ -14,9 +14,6 @@ public class DatabaseConnection {
             //mysql.cj.jdbc.Driver
             Class.forName("com.mysql.cj.jdbc.Driver");
             databaseLink =DriverManager.getConnection(url,databaseUser,databasePassword);
-
-
-
         }catch(Exception e){
             e.printStackTrace();
             e.getCause();

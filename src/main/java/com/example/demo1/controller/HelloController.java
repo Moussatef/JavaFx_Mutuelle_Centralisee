@@ -42,15 +42,20 @@ public class HelloController {
     }
 
     public void userLogIn(ActionEvent event) throws IOException {
-        validateLogin();
+        if ((this.input_email.getText().isEmpty() || this.input_password.getText().isEmpty())) {
+            message.setText("Please fill all the fields");
+
+        }else{
+            validateLogin(this.input_email.getText(),this.input_password.getText());
+        }
     }
 
-    public void validateLogin(){
+    public void validateLogin(String email,String password){
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
+        HelloApplication m = new HelloApplication();
 
-        String verifyLogin = " SELECT * FROM officials WHERE official_id  = 1 " ;
-
+        String verifyLogin = " SELECT * FROM officials WHERE email  =' "+email+"' and password='"+password+"';" ;
         try{
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
@@ -58,9 +63,10 @@ public class HelloController {
             while (queryResult.next()){
                 if (queryResult.getInt(1) == 1){
                     System.out.println(queryResult.getString("firstname"));
-                    System.out.println(Long.parseLong(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddhhmmss"))+(long)(Math.random()*(100000))));
+                    m.changeScene("panelControlle.fxml");
                 }else {
                     System.out.println("Invalid Login, try again");
+                    message.setText("Invalide login ,Try again !");
                 }
             }
 
