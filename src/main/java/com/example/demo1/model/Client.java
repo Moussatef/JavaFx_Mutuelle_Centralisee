@@ -1,33 +1,29 @@
 package com.example.demo1.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Client {
+    private int client_id;
     private String badgeNumber;
     private String cin;
     private String passport;
-    private String firstName;
-    private String lastName;
-    private String phoneNumber;
+    private String firstname;
+    private String lastname;
+    private String phone;
     private String email;
     private String address;
-    private String companyName;
-    private LocalDate dateStart;
+    private String company_name;
+    private LocalDate hire_date;
+    private long official_id;
+    private LocalDateTime created_at;
 
     public Client(){
     }
-    public Client(String badgeNumber, String cin, String passport, String firstName, String lastName, String phoneNumber, String email, String address, String companyName,LocalDate dateStart) {
-        this.setBadgeNumber(badgeNumber);
-        this.setCin(cin);
-        this.setPassport(passport);
-        this.setFirstName(firstName);
-        this.setLastName(lastName);
-        this.setPhoneNumber(phoneNumber);
-        this.setEmail(email);
-        this.setAddress(address);
-        this.setCompanyName(companyName);
-        this.setDateStart(dateStart);
-    }
+
+
+
+
 
     public String getBadgenumber() {
         return badgeNumber;
@@ -56,13 +52,7 @@ public class Client {
 
 
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
 
     public String getEmail() {
         return email;
@@ -88,21 +78,9 @@ public class Client {
         this.companyName = companyName;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
 
-    public String getLastName() {
-        return lastName;
-    }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
     public LocalDate getDateStart() {
         return dateStart;

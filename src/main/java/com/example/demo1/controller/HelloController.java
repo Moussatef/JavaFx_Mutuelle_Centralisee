@@ -21,6 +21,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class HelloController {
     @FXML
@@ -43,11 +45,11 @@ public class HelloController {
         validateLogin();
     }
 
-    public boolean validateLogin(){
+    public void validateLogin(){
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-        String verifyLogin = " SELECT * FROM officials WHERE client_id  = 1 " ;
+        String verifyLogin = " SELECT * FROM officials WHERE official_id  = 1 " ;
 
         try{
             Statement statement = connectDB.createStatement();
@@ -56,6 +58,7 @@ public class HelloController {
             while (queryResult.next()){
                 if (queryResult.getInt(1) == 1){
                     System.out.println(queryResult.getString("firstname"));
+                    System.out.println(Long.parseLong(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddhhmmss"))+(long)(Math.random()*(100000))));
                 }else {
                     System.out.println("Invalid Login, try again");
                 }
