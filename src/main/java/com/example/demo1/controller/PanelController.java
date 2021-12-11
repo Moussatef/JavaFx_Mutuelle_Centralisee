@@ -1,10 +1,13 @@
 package com.example.demo1.controller;
 
 import com.example.demo1.model.Client;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -12,6 +15,7 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -71,8 +75,8 @@ public class PanelController implements Initializable {
     @FXML
     private Label msgDate;
 
-    @FXML private TableView<Client> tableView;
-    @FXML private  TableColumn<Client,String> badge;
+    @FXML private  TableView<Client> tableView;
+    @FXML private  TableColumn<Client,String> badgeNumber;
     @FXML private  TableColumn<Client,String> company;
     @FXML private  TableColumn<Client,String> cin;
     @FXML private  TableColumn<Client,String> name;
@@ -85,10 +89,32 @@ public class PanelController implements Initializable {
     public int cmp = 0;
 
     private List<Client> clientList = new ArrayList<>();
+    ObservableList<Client> clientData ;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         fillCmb();
+
+    }
+
+    public void fillTable(){
+        clientData = FXCollections.<Client>observableArrayList(clientList);
+
+        badgeNumber.setCellValueFactory(new PropertyValueFactory<Client, String>("badgenumber"));
+
+
+        company.setCellValueFactory(new PropertyValueFactory<Client, String>("CompanyName"));
+        cin.setCellValueFactory(new PropertyValueFactory<Client, String>("cin"));
+        name.setCellValueFactory(new PropertyValueFactory<Client, String>("FirstName"));
+        phone.setCellValueFactory(new PropertyValueFactory<Client, String>("PhoneNumber"));
+        email.setCellValueFactory(new PropertyValueFactory<Client, String>("Email"));
+        address.setCellValueFactory(new PropertyValueFactory<Client, String>("Address"));
+        dateStart.setCellValueFactory(new PropertyValueFactory<Client, String>("DateStart"));
+
+
+        System.out.println(clientList);
+        tableView.getItems().setAll(clientData);
     }
 
     public void saveInfo(){
@@ -116,6 +142,8 @@ public class PanelController implements Initializable {
         System.out.println(cmbN.getSelectionModel().getSelectedItem());
         if (cmp == 0){
             clientList.add(new Client(inpBadge.getText(),inpCin.getText(),inpPasport.getText(),inpFname.getText(),inpLname.getText(),cmbN.getSelectionModel().getSelectedItem()+"-"+inpPhone.getText(),inpEmail.getText(),inpAddress.getText(),inpCompany.getText(),inpDateStart.getValue()));
+            fillTable();
+
             inpBadge.clear();
             inpCin.clear();
             inpPasport.clear();

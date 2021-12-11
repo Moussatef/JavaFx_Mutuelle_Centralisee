@@ -46,7 +46,7 @@
                      <children>
                         <TableView fx:id="tableView" layoutX="14.0" layoutY="65.0" prefHeight="466.0" prefWidth="1230.0">
                           <columns>
-                            <TableColumn fx:id="badge" prefWidth="120.99710083007812" text="badge number " />
+                            <TableColumn fx:id="badgeNumber" prefWidth="120.99710083007812" text="badge number " />
                             <TableColumn fx:id="company" prefWidth="121.0" text="Company name" />
                               <TableColumn fx:id="cin" prefWidth="87.0" text="CIN" />
                               <TableColumn fx:id="name" prefWidth="170.0" text="Name" />

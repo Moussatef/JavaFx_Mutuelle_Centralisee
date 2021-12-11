@@ -17,19 +17,19 @@ public class Client {
     public Client(){
     }
     public Client(String badgeNumber, String cin, String passport, String firstName, String lastName, String phoneNumber, String email, String address, String companyName,LocalDate dateStart) {
-        this.badgeNumber = badgeNumber;
-        this.cin = cin;
-        this.passport = passport;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.address = address;
-        this.companyName = companyName;
+        this.setBadgeNumber(badgeNumber);
+        this.setCin(cin);
+        this.setPassport(passport);
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+        this.setPhoneNumber(phoneNumber);
+        this.setEmail(email);
+        this.setAddress(address);
+        this.setCompanyName(companyName);
         this.setDateStart(dateStart);
     }
 
-    public String getBadgeNumber() {
+    public String getBadgenumber() {
         return badgeNumber;
     }
 
