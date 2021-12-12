@@ -14,10 +14,10 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         stg = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("forms/login-form.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("forms/panelControlle.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         scene.getStylesheets().addAll(HelloApplication.class.getResource("assets/style.css").toExternalForm());
-        stage.initStyle(StageStyle.UNDECORATED);
+        //stage.initStyle(StageStyle.UNDECORATED);
         stage.setTitle("Welcome");
         stage.setScene(scene);
         stage.show();

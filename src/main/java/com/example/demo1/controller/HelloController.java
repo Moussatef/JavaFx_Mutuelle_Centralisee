@@ -52,7 +52,7 @@ public class HelloController {
 
     public void validateLogin(String email,String password){
         DatabaseConnection connectNow = new DatabaseConnection();
-        Connection connectDB = connectNow.getConnection();
+        Connection connectDB = connectNow.getConnection("mutuelle_centralisee","root","tooor");
         HelloApplication m = new HelloApplication();
 
         String verifyLogin = " SELECT * FROM officials WHERE email  =' "+email+"' and password='"+password+"';" ;
