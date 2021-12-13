@@ -24,6 +24,141 @@
                               <Font name="Calibri" size="37.0" />
                            </font>
                         </Label>
+                        <Pane layoutX="100.0" layoutY="111.0" prefHeight="372.0" prefWidth="1132.0" style="-fx-background-color: #FFFFFFCF;">
+                           <children>
+                              <Pane layoutX="57.0" layoutY="70.0" prefHeight="225.0" prefWidth="420.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, silver, 8, 0, 0, 2);">
+                                 <children>
+                                    <Label layoutX="45.0" layoutY="51.0" text="Name">
+                                       <font>
+                                          <Font name="Calibri Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="122.0" layoutY="48.0" text="Ahmed Mohammed">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="45.0" layoutY="93.0" text="CIN">
+                                       <font>
+                                          <Font name="Calibri Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="122.0" layoutY="89.0" text="HH112233">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="45.0" layoutY="135.0" text="Email">
+                                       <font>
+                                          <Font name="Calibri Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="122.0" layoutY="131.0" text="yc.a.mohammed@gmail.com">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="45.0" layoutY="180.0" text="Phone">
+                                       <font>
+                                          <Font name="Calibri Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="122.0" layoutY="177.0" text="+212611221122">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" text="PERSONAL INFORMATION">
+                                       <font>
+                                          <Font name="Calibri Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="101.0" layoutY="48.0" text=":">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="101.0" layoutY="89.0" text=":">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="101.0" layoutY="131.0" text=":">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="101.0" layoutY="177.0" text=":">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="519.0" layoutY="70.0" prefHeight="225.0" prefWidth="607.0" style="-fx-background-color: #fff;">
+                                 <children>
+                                    <Label layoutX="21.0" layoutY="50.0" text="Name">
+                                       <font>
+                                          <Font name="Calibri Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="24.0" layoutY="173.0" text="Site web">
+                                       <font>
+                                          <Font name="Calibri Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="21.0" layoutY="88.0" text="Addresse">
+                                       <font>
+                                          <Font name="Calibri Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="21.0" layoutY="130.0" text="Phone">
+                                       <font>
+                                          <Font name="Calibri Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="100.0" layoutY="52.0" text="Mutuelle Générale du Personnel des Administrations Publiques du Maroc (M.G.P.A.P)">
+                                       <font>
+                                          <Font name="Calibri" size="14.0" />
+                                       </font></Label>
+                                    <Label layoutX="101.0" layoutY="89.0" text="29, avenue Ibn Sina. Rabat">
+                                       <font>
+                                          <Font name="Calibri" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="102.0" layoutY="131.0" text="0537277836">
+                                       <font>
+                                          <Font name="Calibri" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="102.0" layoutY="174.0" text="www.mgpap.org.ma">
+                                       <font>
+                                          <Font name="Calibri" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="89.0" layoutY="46.0" text=":">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="89.0" layoutY="84.0" text=":">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="89.0" layoutY="125.0" text=":">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="89.0" layoutY="169.0" text=":">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children></Pane>
+                           </children>
+                        </Pane>
                      </children>
                   </AnchorPane>
             </content>
@@ -52,92 +187,92 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Pane layoutX="28.0" layoutY="21.0" prefHeight="511.0" prefWidth="1182.0" style="-fx-background-color: #9b9b9b8a;">
+                        <Pane layoutX="28.0" layoutY="21.0" prefHeight="511.0" prefWidth="1182.0" style="-fx-background-color: #FFFFFFCF;">
                            <children>
-                              <Button id="btn_save" fx:id="btnSave" layoutX="882.0" layoutY="458.0" mnemonicParsing="false" onAction="#saveInfo" prefHeight="25.0" prefWidth="269.0" style="-fx-background-color: transparent; -fx-border-color: #fff;" text="Save" textFill="WHITE">
+                              <Button id="btn_save" fx:id="btnSave" layoutX="882.0" layoutY="458.0" mnemonicParsing="false" onAction="#saveInfo" prefHeight="25.0" prefWidth="269.0" style="-fx-background-color: transparent; -fx-border-color: #fff;" text="Save" textFill="#545454">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor></Button>
-                              <Label layoutX="14.0" layoutY="76.0" text="Badge Number" textFill="WHITE">
+                              <Label layoutX="14.0" layoutY="76.0" text="Badge Number" textFill="#3c3c3c">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="inpBadge" layoutX="139.0" layoutY="71.0" prefHeight="25.0" prefWidth="194.0" style="-fx-border-color: #fff; -fx-border-width: 0 0 1px 0; -fx-background-color: transparent;" />
-                              <TextField fx:id="inpCompany" layoutX="139.0" layoutY="125.0" prefHeight="25.0" prefWidth="194.0" style="-fx-border-color: #fff; -fx-border-width: 0 0 1px 0; -fx-background-color: transparent;" />
-                              <Label layoutX="14.0" layoutY="131.0" text="Company Name" textFill="WHITE">
+                              <TextField fx:id="inpBadge" layoutX="139.0" layoutY="71.0" prefHeight="25.0" prefWidth="250.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
+                              <TextField fx:id="inpCompany" layoutX="139.0" layoutY="125.0" prefHeight="25.0" prefWidth="250.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
+                              <Label layoutX="14.0" layoutY="131.0" text="Company Name" textFill="#3c3c3c">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="187.0" text="Work start date" textFill="WHITE">
+                              <Label layoutX="14.0" layoutY="187.0" text="Work start date" textFill="#3c3c3c">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="234.0" text="Address" textFill="WHITE">
+                              <Label layoutX="14.0" layoutY="234.0" text="Address" textFill="#3c3c3c">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="inpCin" layoutX="79.0" layoutY="414.0" prefHeight="26.0" prefWidth="196.0" style="-fx-border-color: #fff; -fx-border-width: 0 0 1px 0; -fx-background-color: transparent;" visible="false" />
+                              <TextField fx:id="inpCin" layoutX="79.0" layoutY="414.0" prefHeight="26.0" prefWidth="196.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" visible="false" />
                               <Label fx:id="lbCin" layoutX="14.0" layoutY="427.0" text="CIN" textFill="WHITE" visible="false">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="448.0" layoutY="159.0" text="First Name" textFill="WHITE">
+                              <Label layoutX="448.0" layoutY="159.0" text="First Name" textFill="#3c3c3c">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="inpFname" layoutX="558.0" layoutY="153.0" prefWidth="194.0" style="-fx-border-color: #fff; -fx-border-width: 0 0 1px 0; -fx-background-color: transparent;" />
-                              <Label layoutX="448.0" layoutY="213.0" text="Last Name" textFill="WHITE">
+                              <TextField fx:id="inpFname" layoutX="558.0" layoutY="153.0" prefHeight="27.0" prefWidth="250.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
+                              <Label layoutX="448.0" layoutY="213.0" text="Last Name" textFill="#3c3c3c">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="inpLname" layoutX="558.0" layoutY="207.0" prefWidth="194.0" style="-fx-border-color: #fff; -fx-border-width: 0 0 1px 0; -fx-background-color: transparent;" />
-                              <TextField fx:id="inpEmail" layoutX="558.0" layoutY="251.0" prefWidth="194.0" style="-fx-border-color: #fff; -fx-border-width: 0 0 1px 0; -fx-background-color: transparent;" />
-                              <Label layoutX="453.0" layoutY="259.0" text="Email" textFill="WHITE">
+                              <TextField fx:id="inpLname" layoutX="558.0" layoutY="207.0" prefHeight="27.0" prefWidth="251.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
+                              <TextField fx:id="inpEmail" layoutX="558.0" layoutY="251.0" prefHeight="27.0" prefWidth="251.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
+                              <Label layoutX="453.0" layoutY="259.0" text="Email" textFill="#3c3c3c">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="344.0" layoutY="76.0" text="*">
+                              <Label layoutX="398.0" layoutY="75.0" text="*">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="344.0" layoutY="131.0" text="*">
+                              <Label layoutX="398.0" layoutY="130.0" text="*">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="344.0" layoutY="183.0" text="*">
+                              <Label layoutX="398.0" layoutY="182.0" text="*">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="344.0" layoutY="230.0" text="*">
+                              <Label layoutX="398.0" layoutY="229.0" text="*">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="767.0" layoutY="214.0" text="*">
+                              <Label layoutX="819.0" layoutY="214.0" text="*">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="767.0" layoutY="161.0" text="*">
+                              <Label layoutX="819.0" layoutY="161.0" text="*">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="770.0" layoutY="261.0" text="*">
+                              <Label layoutX="819.0" layoutY="256.0" text="*">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -155,9 +290,9 @@
                               <Label fx:id="msgFname" layoutX="561.0" layoutY="183.0" textFill="#f21313" />
                               <Label fx:id="msgLname" layoutX="560.0" layoutY="238.0" textFill="#f21313" />
                               <Label fx:id="msgEmail" layoutX="561.0" layoutY="285.0" textFill="#f21313" />
-                              <DatePicker fx:id="inpDateStart" layoutX="133.0" layoutY="182.0" prefHeight="25.0" prefWidth="205.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0;" />
-                              <TextArea fx:id="inpAddress" layoutX="132.0" layoutY="232.0" prefHeight="122.0" prefWidth="208.0" />
-                              <RadioButton fx:id="checkCin" layoutX="17.0" layoutY="375.0" mnemonicParsing="false" onAction="#cinInp" text="CIN" textFill="WHITE">
+                              <DatePicker fx:id="inpDateStart" layoutX="138.0" layoutY="182.0" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: transeparent; -fx-border-width: 0 0 2px 0; -fx-border-color: #4285f4;" />
+                              <TextArea fx:id="inpAddress" layoutX="139.0" layoutY="232.0" prefHeight="122.0" prefWidth="250.0" style="-fx-border-color: #4285f4;" />
+                              <RadioButton fx:id="checkCin" layoutX="61.0" layoutY="375.0" mnemonicParsing="false" onAction="#cinInp" selected="true" text="CIN" textFill="#3c3c3c">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -165,7 +300,7 @@
                                     <ToggleGroup fx:id="idn" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="checkPasport" layoutX="131.0" layoutY="375.0" mnemonicParsing="false" onAction="#passInp" text="Pasport" textFill="WHITE" toggleGroup="$idn">
+                              <RadioButton fx:id="checkPasport" layoutX="149.0" layoutY="375.0" mnemonicParsing="false" onAction="#passInp" text="Pasport" textFill="#3c3c3c" toggleGroup="$idn">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -175,20 +310,20 @@
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="inpPhone" layoutX="655.0" layoutY="84.0" prefHeight="26.0" prefWidth="155.0" style="-fx-border-color: #fff; -fx-border-width: 0 0 1px 0; -fx-background-color: transparent;" />
-                              <Label layoutX="448.0" layoutY="92.0" text="Phone Number" textFill="WHITE">
+                              <TextField fx:id="inpPhone" layoutX="655.0" layoutY="84.0" prefHeight="26.0" prefWidth="155.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
+                              <Label layoutX="448.0" layoutY="92.0" text="Phone Number" textFill="#3c3c3c">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <ComboBox fx:id="cmbN" layoutX="558.0" layoutY="85.0" prefHeight="26.0" prefWidth="92.0" promptText="MA +212" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: #fff;" />
-                              <Label fx:id="lbPassport" layoutX="15.0" layoutY="426.0" text="Passport" textFill="WHITE" visible="false">
+                              <ComboBox fx:id="cmbN" layoutX="558.0" layoutY="85.0" prefHeight="26.0" prefWidth="92.0" promptText="MA +212" style="-fx-background-color: transparent; -fx-border-width: 0 0 2px 0; -fx-border-color: #4285f4;" />
+                              <Label fx:id="lbPassport" layoutX="15.0" layoutY="426.0" text="Passport" textFill="#545454" visible="false">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="inpPasport" layoutX="96.0" layoutY="414.0" prefHeight="26.0" prefWidth="179.0" style="-fx-border-color: #fff; -fx-border-width: 0 0 1px 0; -fx-background-color: transparent;" visible="false" />
-                              <Label layoutX="306.0" layoutY="14.0" text="ADD CLIENT FORM" textFill="WHITE" underline="true">
+                              <TextField fx:id="inpPasport" layoutX="96.0" layoutY="414.0" prefHeight="26.0" prefWidth="179.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" visible="false" />
+                              <Label layoutX="541.0" layoutY="11.0" text="ADD CLIENT FORM" textFill="#3c3c3c" underline="true">
                                  <font>
                                     <Font name="Book Antiqua" size="30.0" />
                                  </font>

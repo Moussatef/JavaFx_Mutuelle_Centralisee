@@ -1,6 +1,8 @@
 package com.example.demo1.controller;
 
 import com.example.demo1.model.Client;
+import com.example.demo1.model.Officials;
+import com.example.demo1.mpl.OfficialImp;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -21,6 +23,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class PanelController implements Initializable {
+    public static int id  ;
+
     @FXML
     private Button btnSave;
     @FXML
@@ -87,13 +91,14 @@ public class PanelController implements Initializable {
 
 
     public int cmp = 0;
+    private Officials officials;
 
     private List<Client> clientList = new ArrayList<>();
     ObservableList<Client> clientData ;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        officials = new OfficialImp().getOfficialById(id);
         fillCmb();
 
     }

@@ -54,7 +54,7 @@ public class HelloController {
     }
     public void validateLogin(String email,String password) throws IOException {
         HelloApplication form = new HelloApplication();
-        OfficialsInterface official = new OfficialImp();
+        OfficialImp official = new OfficialImp();
         Officials officials = official.getOfficialByEmailAndPassword(email,password);
 
         if (officials != null){
