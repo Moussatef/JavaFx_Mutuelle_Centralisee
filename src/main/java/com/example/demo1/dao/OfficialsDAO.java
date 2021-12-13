@@ -15,11 +15,9 @@ public class OfficialsDAO extends DAO<Officials>{
             try{
                 Statement statement = connectDB.createStatement();
                 ResultSet queryResult = statement.executeQuery(verifyLogin);
-                System.out.println(verifyLogin);
                 while (queryResult.next()) {
 
                     if (queryResult.getInt("official_id") > 0) {
-                        System.out.println(queryResult.getString("firstname"));
                         PanelController.id = queryResult.getInt("official_id");
                        return new Officials(queryResult.getInt("official_id"), queryResult.getString("firstname"), queryResult.getString("lastname"), queryResult.getString("cin"), queryResult.getString("phone"), queryResult.getString("email"), queryResult.getString("password"), queryResult.getInt("ent_id"));
                     } else {
@@ -39,18 +37,15 @@ public class OfficialsDAO extends DAO<Officials>{
         try{
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
-            System.out.println(verifyLogin);
             while (queryResult.next()) {
 
                 if (queryResult.getRow() > 0) {
-                    System.out.println(queryResult.getString("firstname"));
                     PanelController.id = queryResult.getInt("official_id");
                     return new Officials(queryResult.getInt("official_id"), queryResult.getString("firstname"), queryResult.getString("lastname"), queryResult.getString("cin"), queryResult.getString("phone"), queryResult.getString("email"), queryResult.getString("password"), queryResult.getInt("ent_id"));
                 } else {
                     System.out.println("Invalid Login, try again dao");
                 }
             }
-
         }catch (Exception e){
             e.printStackTrace();
             e.getCause();

@@ -58,7 +58,6 @@ public class HelloController {
         Officials officials = official.getOfficialByEmailAndPassword(email,password);
 
         if (officials != null){
-            System.out.println(officials.getEmail());
             form.changeScene("panelControlle.fxml");
         }else {
             System.out.println("Invalid Login, try again");

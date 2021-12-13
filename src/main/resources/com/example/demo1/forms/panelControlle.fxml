@@ -33,7 +33,7 @@
                                           <Font name="Calibri Bold" size="16.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="122.0" layoutY="48.0" text="Ahmed Mohammed">
+                                    <Label fx:id="official_name" layoutX="122.0" layoutY="48.0" text="Ahmed Mohammed">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -43,7 +43,7 @@
                                           <Font name="Calibri Bold" size="16.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="122.0" layoutY="89.0" text="HH112233">
+                                    <Label fx:id="official_cin" layoutX="122.0" layoutY="89.0" text="HH112233">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -53,7 +53,7 @@
                                           <Font name="Calibri Bold" size="16.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="122.0" layoutY="131.0" text="yc.a.mohammed@gmail.com">
+                                    <Label fx:id="official_email" layoutX="122.0" layoutY="131.0" text="yc.a.mohammed@gmail.com">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -63,7 +63,7 @@
                                           <Font name="Calibri Bold" size="16.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="122.0" layoutY="177.0" text="+212611221122">
+                                    <Label fx:id="official_phone" layoutX="122.0" layoutY="177.0" text="+212611221122">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -93,6 +93,7 @@
                                           <Font name="System Bold" size="16.0" />
                                        </font>
                                     </Label>
+                                    <Separator layoutX="13.0" layoutY="36.0" prefHeight="0.0" prefWidth="230.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0;" />
                                  </children>
                               </Pane>
                               <Pane layoutX="519.0" layoutY="70.0" prefHeight="225.0" prefWidth="607.0" style="-fx-background-color: #fff;">
@@ -117,21 +118,21 @@
                                           <Font name="Calibri Bold" size="16.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="100.0" layoutY="52.0" text="Mutuelle Générale du Personnel des Administrations Publiques du Maroc (M.G.P.A.P)">
+                                    <Label fx:id="ent_name" layoutX="100.0" layoutY="52.0" text="Mutuelle Générale du Personnel des Administrations Publiques du Maroc (M.G.P.A.P)">
                                        <font>
                                           <Font name="Calibri" size="14.0" />
                                        </font></Label>
-                                    <Label layoutX="101.0" layoutY="89.0" text="29, avenue Ibn Sina. Rabat">
+                                    <Label fx:id="ent_addresse" layoutX="101.0" layoutY="89.0" text="29, avenue Ibn Sina. Rabat">
                                        <font>
                                           <Font name="Calibri" size="16.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="102.0" layoutY="131.0" text="0537277836">
+                                    <Label fx:id="ent_phone" layoutX="102.0" layoutY="131.0" text="0537277836">
                                        <font>
                                           <Font name="Calibri" size="16.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="102.0" layoutY="174.0" text="www.mgpap.org.ma">
+                                    <Label fx:id="ent_web" layoutX="102.0" layoutY="174.0" text="www.mgpap.org.ma">
                                        <font>
                                           <Font name="Calibri" size="16.0" />
                                        </font>
@@ -156,7 +157,18 @@
                                           <Font name="System Bold" size="16.0" />
                                        </font>
                                     </Label>
+                                    <Label layoutX="9.0" layoutY="9.0" prefHeight="17.0" text="ENTITY INFORMATION">
+                                       <font>
+                                          <Font name="Calibri Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="-79.0" layoutY="-58.0" prefHeight="17.0" text="PROFIL INFORMATION">
+                                       <font>
+                                          <Font name="Calibri Bold" size="20.0" />
+                                       </font>
+                                    </Label>
                                  </children></Pane>
+                              <Separator layoutX="527.0" layoutY="103.0" prefHeight="0.0" prefWidth="230.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0;" />
                            </children>
                         </Pane>
                      </children>

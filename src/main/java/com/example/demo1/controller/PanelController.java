@@ -99,6 +99,7 @@ public class PanelController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         officials = new OfficialImp().getOfficialById(id);
+        System.out.println(officials.getEmail());
         fillCmb();
 
     }
