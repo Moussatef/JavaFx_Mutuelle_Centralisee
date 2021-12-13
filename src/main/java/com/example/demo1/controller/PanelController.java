@@ -2,6 +2,7 @@ package com.example.demo1.controller;
 
 import com.example.demo1.model.Client;
 import com.example.demo1.model.Officials;
+import com.example.demo1.mpl.ClientMpl;
 import com.example.demo1.mpl.OfficialImp;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -83,9 +84,10 @@ public class PanelController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         officials = new OfficialImp().getOfficialById(id);
-        System.out.println(officials.getEmail());
+        clientList = new ClientMpl().getListClientForOfficial(id);
         fillCmb();
         fillLabelsInfo();
+        fillTable();
 
     }
 
@@ -100,6 +102,7 @@ public class PanelController implements Initializable {
     }
 
     public void fillTable(){
+
         clientData = FXCollections.<Client>observableArrayList(clientList);
 
         badgeNumber.setCellValueFactory(new PropertyValueFactory<Client, String>("badgenumber"));
@@ -107,8 +110,8 @@ public class PanelController implements Initializable {
 
         company.setCellValueFactory(new PropertyValueFactory<Client, String>("CompanyName"));
         cin.setCellValueFactory(new PropertyValueFactory<Client, String>("cin"));
-        name.setCellValueFactory(new PropertyValueFactory<Client, String>("FirstName"));
-        phone.setCellValueFactory(new PropertyValueFactory<Client, String>("PhoneNumber"));
+        name.setCellValueFactory(new PropertyValueFactory<Client, String>("Firstname"));
+        phone.setCellValueFactory(new PropertyValueFactory<Client, String>("Phone"));
         email.setCellValueFactory(new PropertyValueFactory<Client, String>("Email"));
         address.setCellValueFactory(new PropertyValueFactory<Client, String>("Address"));
         dateStart.setCellValueFactory(new PropertyValueFactory<Client, String>("DateStart"));
