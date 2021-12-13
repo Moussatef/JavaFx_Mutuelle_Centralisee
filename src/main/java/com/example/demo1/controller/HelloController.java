@@ -2,6 +2,9 @@ package com.example.demo1.controller;
 
 import com.example.demo1.HelloApplication;
 import com.example.demo1.connection.DatabaseConnection;
+import com.example.demo1.interfases.OfficialsInterface;
+import com.example.demo1.model.Officials;
+import com.example.demo1.mpl.OfficialImp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -49,31 +52,21 @@ public class HelloController {
             validateLogin(this.input_email.getText(),this.input_password.getText());
         }
     }
+    public void validateLogin(String email,String password) throws IOException {
+        HelloApplication form = new HelloApplication();
+        OfficialsInterface official = new OfficialImp();
+        Officials officials = official.getOfficialByEmailAndPassword(email,password);
 
-    public void validateLogin(String email,String password){
-        DatabaseConnection connectNow = new DatabaseConnection();
-        Connection connectDB = connectNow.getConnection("mutuelle_centralisee","root","tooor");
-        HelloApplication m = new HelloApplication();
-
-        String verifyLogin = " SELECT * FROM officials WHERE email  =' "+email+"' and password='"+password+"';" ;
-        try{
-            Statement statement = connectDB.createStatement();
-            ResultSet queryResult = statement.executeQuery(verifyLogin);
-
-            while (queryResult.next()){
-                if (queryResult.getInt(1) == 1){
-                    System.out.println(queryResult.getString("firstname"));
-                    m.changeScene("panelControlle.fxml");
-                }else {
-                    System.out.println("Invalid Login, try again");
-                    message.setText("Invalide login ,Try again !");
-                }
-            }
-
-        }catch (Exception e){
-            e.printStackTrace();
-            e.getCause();
+        if (officials != null){
+            System.out.println(officials.getEmail());
+            form.changeScene("panelControlle.fxml");
+        }else {
+            System.out.println("Invalid Login, try again");
+            message.setText("Invalide login ,Try again !");
         }
+
+
+
     }
 
     public void Login() throws IOException {

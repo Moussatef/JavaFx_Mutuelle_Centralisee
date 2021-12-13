@@ -11,14 +11,27 @@ public class Officials {
     private String cin;
     private String phone;
     private String email;
-    private Entity entity;
+    private String password;
+    private int entity;
 
-    public Officials(String firstname, String lastname, String cin, String phone, String email, Entity entity) {
+    public Officials(int official_id, String firstname, String lastname, String cin, String phone, String email, String password, int entity) {
+        this.official_id = official_id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.cin = cin;
+        this.phone = phone;
+        this.email = email;
+        this.password = password;
+        this.entity = entity;
+    }
+
+    public Officials(String firstname, String lastname, String cin, String phone, String email, String password, int entity) {
         this.setFirstname(firstname);
         this.setLastname(lastname);
         this.setCin(cin);
         this.setPhone(phone);
         this.setEmail(email);
+        this.setPassword(password);
         this.setEntity(entity);
     }
 
@@ -62,15 +75,23 @@ public class Officials {
         this.email = email;
     }
 
-    public Entity getEntity() {
+    public int getEntity() {
         return entity;
     }
 
-    public void setEntity(Entity entity) {
+    public void setEntity(int entity) {
         this.entity = entity;
     }
 
     public int getOfficial_id() {
         return official_id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

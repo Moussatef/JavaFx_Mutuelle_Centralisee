@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane id="panelglobal" prefHeight="695.0" prefWidth="1493.0" style="-fx-background-color: #77A0A9;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.controller.PanelController">
+<AnchorPane id="panelglobal" prefHeight="709.0" prefWidth="1254.0" style="-fx-background-color: #0A1244FF;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.controller.PanelController">
    <children>
-      <AnchorPane prefHeight="575.0" prefWidth="241.0" style="-fx-background-color: #6F7D8C;">
-         <children>
-            <Pane id="left_panel" prefHeight="695.0" prefWidth="248.0">
-               <children>
-                  <Button fx:id="btn_exit" layoutY="653.0" mnemonicParsing="false" onAction="#onExitClick" prefHeight="34.0" prefWidth="248.0" style="-fx-background-color: #6F7D8C; -fx-border-color: #4B2E39;" text="Exit" textFill="WHITE">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-               </children>
-            </Pane>
-         </children>
-      </AnchorPane>
-      <TabPane layoutX="248.0" prefHeight="575.0" prefWidth="1246.0" tabClosingPolicy="UNAVAILABLE">
+      <ImageView fitHeight="695.0" fitWidth="1329.0" layoutX="7.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/hsp.jpg" />
+         </image>
+      </ImageView>
+      <TabPane layoutX="7.0" layoutY="4.0" prefHeight="575.0" prefWidth="1246.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab style="-fx-background-color: #fff;" text="Home">
             <content>
@@ -64,9 +52,9 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Pane layoutX="28.0" layoutY="21.0" prefHeight="511.0" prefWidth="842.0" style="-fx-background-color: #9b9b9b8a;">
+                        <Pane layoutX="28.0" layoutY="21.0" prefHeight="511.0" prefWidth="1182.0" style="-fx-background-color: #9b9b9b8a;">
                            <children>
-                              <Button id="btn_save" fx:id="btnSave" layoutX="524.0" layoutY="410.0" mnemonicParsing="false" onAction="#saveInfo" prefHeight="25.0" prefWidth="269.0" style="-fx-background-color: transparent; -fx-border-color: #fff;" text="Save" textFill="WHITE">
+                              <Button id="btn_save" fx:id="btnSave" layoutX="882.0" layoutY="458.0" mnemonicParsing="false" onAction="#saveInfo" prefHeight="25.0" prefWidth="269.0" style="-fx-background-color: transparent; -fx-border-color: #fff;" text="Save" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
