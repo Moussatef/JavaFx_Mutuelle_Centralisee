@@ -7,6 +7,14 @@ public class Entity {
     private String ent_phone;
     private String ent_site;
 
+    public Entity(int ent_id, String ent_name, String ent_address, String ent_phone, String ent_site) {
+        this.ent_id = ent_id;
+        this.ent_name = ent_name;
+        this.ent_address = ent_address;
+        this.ent_phone = ent_phone;
+        this.ent_site = ent_site;
+    }
+
     public Entity(String ent_name, String ent_address, String ent_phone, String ent_site) {
         this.setEnt_name(ent_name);
         this.setEnt_address(ent_address);

@@ -2,6 +2,7 @@ package com.example.demo1.dao;
 
 import com.example.demo1.connection.DatabaseConnection;
 import com.example.demo1.controller.PanelController;
+import com.example.demo1.model.Entity;
 import com.example.demo1.model.Officials;
 
 import java.sql.Connection;
@@ -11,7 +12,7 @@ import java.sql.Statement;
 public class OfficialsDAO extends DAO<Officials>{
 
     public Officials getOfficialByEmailAndPassword(String email,String password){
-         String verifyLogin = " SELECT * FROM officials WHERE email  ='"+email+"' and password='"+password+"';";
+         String verifyLogin = " SELECT * FROM officials inner join entity on officials.ent_id = entity.ent_id WHERE email  ='"+email+"' and password='"+password+"';";
             try{
                 Statement statement = connectDB.createStatement();
                 ResultSet queryResult = statement.executeQuery(verifyLogin);
@@ -19,7 +20,7 @@ public class OfficialsDAO extends DAO<Officials>{
 
                     if (queryResult.getInt("official_id") > 0) {
                         PanelController.id = queryResult.getInt("official_id");
-                       return new Officials(queryResult.getInt("official_id"), queryResult.getString("firstname"), queryResult.getString("lastname"), queryResult.getString("cin"), queryResult.getString("phone"), queryResult.getString("email"), queryResult.getString("password"), queryResult.getInt("ent_id"));
+                       return new Officials(queryResult.getInt("official_id"), queryResult.getString("firstname"), queryResult.getString("lastname"), queryResult.getString("cin"), queryResult.getString("phone"), queryResult.getString("email"), queryResult.getString("password"), new Entity(queryResult.getInt("ent_id"),queryResult.getString("ent_name"),queryResult.getString("ent_address"),queryResult.getString("ent_phone"),queryResult.getString("ent_site")));
                     } else {
                         System.out.println("Invalid Login, try again dao");
                     }
@@ -41,7 +42,7 @@ public class OfficialsDAO extends DAO<Officials>{
 
                 if (queryResult.getRow() > 0) {
                     PanelController.id = queryResult.getInt("official_id");
-                    return new Officials(queryResult.getInt("official_id"), queryResult.getString("firstname"), queryResult.getString("lastname"), queryResult.getString("cin"), queryResult.getString("phone"), queryResult.getString("email"), queryResult.getString("password"), queryResult.getInt("ent_id"));
+                    return new Officials(queryResult.getInt("official_id"), queryResult.getString("firstname"), queryResult.getString("lastname"), queryResult.getString("cin"), queryResult.getString("phone"), queryResult.getString("email"), queryResult.getString("password"), new Entity(queryResult.getInt("ent_id"),queryResult.getString("ent_name"),queryResult.getString("ent_address"),queryResult.getString("ent_phone"),queryResult.getString("ent_site")));
                 } else {
                     System.out.println("Invalid Login, try again dao");
                 }

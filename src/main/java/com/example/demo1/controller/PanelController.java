@@ -25,59 +25,43 @@ import java.util.ResourceBundle;
 public class PanelController implements Initializable {
     public static int id  ;
 
-    @FXML
-    private Button btnSave;
-    @FXML
-    private TextField inpBadge;
-    @FXML
-    private TextField inpCompany;
-    @FXML
-    private TextArea inpAddress;
-    @FXML
-    private TextField inpCin;
-    @FXML
-    private TextField inpPasport;
-    @FXML
-    private RadioButton checkCin;
-    @FXML
-    private RadioButton checkPasport;
-    @FXML
-    private TextField inpFname;
-    @FXML
-    private TextField inpLname;
-    @FXML
-    private TextField inpEmail;
-    @FXML
-    private Label msgBadg ;
-    @FXML
-    private Label msgCompany;
+    @FXML private Button btnSave;
+    @FXML private TextField inpBadge;
+    @FXML private TextField inpCompany;
+    @FXML private TextArea inpAddress;
+    @FXML private TextField inpCin;
+    @FXML private TextField inpPasport;
+    @FXML private RadioButton checkCin;
+    @FXML private RadioButton checkPasport;
+    @FXML private TextField inpFname;
+    @FXML private TextField inpLname;
+    @FXML private TextField inpEmail;
+    @FXML private Label msgBadg ;
+    @FXML private Label msgCompany;
+    @FXML private Label msgAdrress;
+    @FXML private Label msgCin;
+    @FXML private Label msgFname;
+    @FXML private Label msgLname;
+    @FXML private Label msgEmail;
+    @FXML private DatePicker inpDateStart;
+    @FXML private Label lbPassport;
+    @FXML private Label lbCin;
+    @FXML private ComboBox<Object> cmbN;
+    @FXML private Button btn_exit;
+    @FXML private Label lbPhone;
+    @FXML private TextField inpPhone;
+    @FXML private Label msgDate;
 
-    @FXML
-    private Label msgAdrress;
-    @FXML
-    private Label msgCin;
-    @FXML
-    private Label msgFname;
-    @FXML
-    private Label msgLname;
-    @FXML
-    private Label msgEmail;
-    @FXML
-    private DatePicker inpDateStart;
-    @FXML
-    private Label lbPassport;
-    @FXML
-    private Label lbCin;
-    @FXML
-    private ComboBox<Object> cmbN;
-    @FXML
-    private Button btn_exit;
-    @FXML
-    private Label lbPhone;
-    @FXML
-    private TextField inpPhone;
-    @FXML
-    private Label msgDate;
+    //labels show information
+    @FXML private Label official_name;
+    @FXML private Label official_cin;
+    @FXML private Label official_phone;
+    @FXML private Label official_email;
+
+    @FXML private Label ent_name;
+    @FXML private Label ent_address;
+    @FXML private Label ent_phone;
+    @FXML private Label ent_web;
 
     @FXML private  TableView<Client> tableView;
     @FXML private  TableColumn<Client,String> badgeNumber;
@@ -101,7 +85,15 @@ public class PanelController implements Initializable {
         officials = new OfficialImp().getOfficialById(id);
         System.out.println(officials.getEmail());
         fillCmb();
+        fillLabelsInfo();
 
+    }
+
+    public void fillLabelsInfo(){
+        official_cin.setText(officials.getCin());
+        official_email.setText(officials.getEmail());
+        official_phone.setText(officials.getPhone());
+        official_name.setText(officials.getFirstname()+" "+officials.getLastname());
     }
 
     public void fillTable(){

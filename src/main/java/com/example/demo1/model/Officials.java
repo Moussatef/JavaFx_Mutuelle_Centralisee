@@ -12,9 +12,9 @@ public class Officials {
     private String phone;
     private String email;
     private String password;
-    private int entity;
+    private Entity entity;
 
-    public Officials(int official_id, String firstname, String lastname, String cin, String phone, String email, String password, int entity) {
+    public Officials(int official_id, String firstname, String lastname, String cin, String phone, String email, String password, Entity entity) {
         this.official_id = official_id;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -25,7 +25,7 @@ public class Officials {
         this.entity = entity;
     }
 
-    public Officials(String firstname, String lastname, String cin, String phone, String email, String password, int entity) {
+    public Officials(String firstname, String lastname, String cin, String phone, String email, String password, Entity entity) {
         this.setFirstname(firstname);
         this.setLastname(lastname);
         this.setCin(cin);
@@ -75,11 +75,11 @@ public class Officials {
         this.email = email;
     }
 
-    public int getEntity() {
+    public Entity getEntity() {
         return entity;
     }
 
-    public void setEntity(int entity) {
+    public void setEntity(Entity entity) {
         this.entity = entity;
     }
 
