@@ -94,6 +94,9 @@ public class PanelController implements Initializable {
         official_email.setText(officials.getEmail());
         official_phone.setText(officials.getPhone());
         official_name.setText(officials.getFirstname()+" "+officials.getLastname());
+        ent_phone.setText(officials.getEntity().getEnt_phone());
+        ent_address.setText(officials.getEntity().getEnt_address());
+        ent_web.setText(officials.getEntity().getEnt_site());
     }
 
     public void fillTable(){

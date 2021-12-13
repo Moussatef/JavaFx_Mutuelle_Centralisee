@@ -20,12 +20,11 @@ public class OfficialsDAO extends DAO<Officials>{
 
                     if (queryResult.getInt("official_id") > 0) {
                         PanelController.id = queryResult.getInt("official_id");
-                       return new Officials(queryResult.getInt("official_id"), queryResult.getString("firstname"), queryResult.getString("lastname"), queryResult.getString("cin"), queryResult.getString("phone"), queryResult.getString("email"), queryResult.getString("password"), new Entity(queryResult.getInt("ent_id"),queryResult.getString("ent_name"),queryResult.getString("ent_address"),queryResult.getString("ent_phone"),queryResult.getString("ent_site")));
+                       return new Officials(queryResult.getInt("official_id"), queryResult.getString("firstname"), queryResult.getString("lastname"), queryResult.getString("cin"), queryResult.getString("phone"), queryResult.getString("email"), queryResult.getString("password"), new Entity(queryResult.getInt("ent_id"),queryResult.getString("ent_name"),queryResult.getString("ent_addresse"),queryResult.getString("ent_phone"),queryResult.getString("ent_site")));
                     } else {
                         System.out.println("Invalid Login, try again dao");
                     }
                 }
-
             }catch (Exception e){
                 e.printStackTrace();
                 e.getCause();
@@ -34,7 +33,7 @@ public class OfficialsDAO extends DAO<Officials>{
     }
     @Override
     public Officials find(int id) {
-        String verifyLogin = " SELECT * FROM officials WHERE official_id ="+id;
+        String verifyLogin = " SELECT * FROM officials inner join entity on officials.ent_id = entity.ent_id WHERE official_id ="+id;
         try{
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
@@ -42,7 +41,7 @@ public class OfficialsDAO extends DAO<Officials>{
 
                 if (queryResult.getRow() > 0) {
                     PanelController.id = queryResult.getInt("official_id");
-                    return new Officials(queryResult.getInt("official_id"), queryResult.getString("firstname"), queryResult.getString("lastname"), queryResult.getString("cin"), queryResult.getString("phone"), queryResult.getString("email"), queryResult.getString("password"), new Entity(queryResult.getInt("ent_id"),queryResult.getString("ent_name"),queryResult.getString("ent_address"),queryResult.getString("ent_phone"),queryResult.getString("ent_site")));
+                    return new Officials(queryResult.getInt("official_id"), queryResult.getString("firstname"), queryResult.getString("lastname"), queryResult.getString("cin"), queryResult.getString("phone"), queryResult.getString("email"), queryResult.getString("password"), new Entity(queryResult.getInt("ent_id"),queryResult.getString("ent_name"),queryResult.getString("ent_addresse"),queryResult.getString("ent_phone"),queryResult.getString("ent_site")));
                 } else {
                     System.out.println("Invalid Login, try again dao");
                 }
@@ -51,7 +50,6 @@ public class OfficialsDAO extends DAO<Officials>{
             e.printStackTrace();
             e.getCause();
         }
-
         return null;
     }
 
