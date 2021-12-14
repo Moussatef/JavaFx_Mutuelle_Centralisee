@@ -17,7 +17,6 @@ public class OfficialsDAO extends DAO<Officials>{
                 Statement statement = connectDB.createStatement();
                 ResultSet queryResult = statement.executeQuery(verifyLogin);
                 while (queryResult.next()) {
-
                     if (queryResult.getInt("official_id") > 0) {
                         PanelController.id = queryResult.getInt("official_id");
                        return new Officials(queryResult.getInt("official_id"), queryResult.getString("firstname"), queryResult.getString("lastname"), queryResult.getString("cin"), queryResult.getString("phone"), queryResult.getString("email"), queryResult.getString("password"), new Entity(queryResult.getInt("ent_id"),queryResult.getString("ent_name"),queryResult.getString("ent_addresse"),queryResult.getString("ent_phone"),queryResult.getString("ent_site")));

@@ -15,14 +15,14 @@ public class Client {
     private String email;
     private String address;
     private String company_name;
-    private Date hire_date;
+    private LocalDate hire_date;
     private int official_id;
-    private Date created_at;
+    private LocalDate created_at;
 
     public Client(){
     }
 
-    public Client(int client_id, String badgeNumber, String cin, String passport, String firstname, String lastname, String phone, String email, String address, String company_name, Date hire_date, int official_id, Date created_at) {
+    public Client(int client_id, String badgeNumber, String cin, String passport, String firstname, String lastname, String phone, String email, String address, String company_name, LocalDate hire_date, int official_id, LocalDate created_at) {
         this.client_id = client_id;
         this.badgeNumber = badgeNumber;
         this.cin = cin;
@@ -38,7 +38,7 @@ public class Client {
         this.created_at = created_at;
     }
 
-    public Client(String badgeNumber, String cin, String passport, String firstname, String lastname, String phone, String email, String address, String company_name, Date hire_date, int official_id, Date created_at) {
+    public Client(String badgeNumber, String cin, String passport, String firstname, String lastname, String phone, String email, String address, String company_name, LocalDate hire_date, int official_id, LocalDate created_at) {
         this.badgeNumber = badgeNumber;
         this.cin = cin;
         this.passport = passport;
@@ -101,11 +101,11 @@ public class Client {
         this.company_name = companyName;
     }
 
-    public Date getDateStart() {
+    public LocalDate getDateStart() {
         return hire_date;
     }
 
-    public void setDateStart(Date dateStart) {
+    public void setDateStart(LocalDate dateStart) {
         this.hire_date = dateStart;
     }
 
@@ -145,11 +145,11 @@ public class Client {
         this.official_id = official_id;
     }
 
-    public Date getCreated_at() {
+    public LocalDate getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(Date created_at) {
+    public void setCreated_at(LocalDate created_at) {
         this.created_at = created_at;
     }
 }

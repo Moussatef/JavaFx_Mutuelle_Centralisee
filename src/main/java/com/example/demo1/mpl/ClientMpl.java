@@ -11,4 +11,10 @@ public class ClientMpl {
         return new ClientDAO().getClientByIdOfficial(id);
 
     }
+
+    public Client insertClient(Client client){
+
+        return new ClientDAO().create(client);
+
+    }
 }

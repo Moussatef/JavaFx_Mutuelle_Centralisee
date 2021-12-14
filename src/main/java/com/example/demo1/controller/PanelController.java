@@ -16,10 +16,12 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import javax.security.auth.callback.ConfirmationCallback;
 import java.io.FileReader;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -48,7 +50,6 @@ public class PanelController implements Initializable {
     @FXML private Label lbPassport;
     @FXML private Label lbCin;
     @FXML private ComboBox<Object> cmbN;
-    @FXML private Button btn_exit;
     @FXML private Label lbPhone;
     @FXML private TextField inpPhone;
     @FXML private Label msgDate;
@@ -68,11 +69,18 @@ public class PanelController implements Initializable {
     @FXML private  TableColumn<Client,String> badgeNumber;
     @FXML private  TableColumn<Client,String> company;
     @FXML private  TableColumn<Client,String> cin;
-    @FXML private  TableColumn<Client,String> name;
+    @FXML private  TableColumn<Client,String> passport;
+    @FXML private  TableColumn<Client,String> clmfname;
+    @FXML private  TableColumn<Client,String> lname;
     @FXML private  TableColumn<Client,String> phone;
     @FXML private  TableColumn<Client,String> email;
     @FXML private  TableColumn<Client,String> address;
     @FXML private  TableColumn<Client,String> dateStart;
+
+    @FXML private Tab showClientP;
+    @FXML private Tab addClientP;
+    @FXML private Tab homeP;
+    @FXML private TabPane tabPane;
 
 
     public int cmp = 0;
@@ -80,6 +88,7 @@ public class PanelController implements Initializable {
 
     private List<Client> clientList = new ArrayList<>();
     ObservableList<Client> clientData ;
+    private ConfirmationCallback MessageBox;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -96,6 +105,8 @@ public class PanelController implements Initializable {
         official_email.setText(officials.getEmail());
         official_phone.setText(officials.getPhone());
         official_name.setText(officials.getFirstname()+" "+officials.getLastname());
+
+        ent_name.setText(officials.getEntity().getEnt_name());
         ent_phone.setText(officials.getEntity().getEnt_phone());
         ent_address.setText(officials.getEntity().getEnt_address());
         ent_web.setText(officials.getEntity().getEnt_site());
@@ -106,22 +117,21 @@ public class PanelController implements Initializable {
         clientData = FXCollections.<Client>observableArrayList(clientList);
 
         badgeNumber.setCellValueFactory(new PropertyValueFactory<Client, String>("badgenumber"));
-
-
         company.setCellValueFactory(new PropertyValueFactory<Client, String>("CompanyName"));
-        cin.setCellValueFactory(new PropertyValueFactory<Client, String>("cin"));
-        name.setCellValueFactory(new PropertyValueFactory<Client, String>("Firstname"));
+        clmfname.setCellValueFactory(new PropertyValueFactory<Client, String>("Firstname"));
+        lname.setCellValueFactory(new PropertyValueFactory<Client, String>("Lastname"));
         phone.setCellValueFactory(new PropertyValueFactory<Client, String>("Phone"));
+        cin.setCellValueFactory(new PropertyValueFactory<Client, String>("cin"));
         email.setCellValueFactory(new PropertyValueFactory<Client, String>("Email"));
         address.setCellValueFactory(new PropertyValueFactory<Client, String>("Address"));
+        passport.setCellValueFactory(new PropertyValueFactory<Client, String>("passport"));
         dateStart.setCellValueFactory(new PropertyValueFactory<Client, String>("DateStart"));
-
-
-        System.out.println(clientList);
         tableView.getItems().setAll(clientData);
     }
 
     public void saveInfo(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();
         cmp = 0;
         msgBadg.setText(badgeCk());
         msgCompany.setText(companyCk());
@@ -132,35 +142,57 @@ public class PanelController implements Initializable {
         lbPhone.setText(phoneCk());
         msgDate.setText(dateCk());
 
-
         if (checkCin.isSelected()){
             msgCin.setText(cinCk());
+            inpPasport.setText(null);
         }
-
-
-        if (checkPasport.isSelected())
+        if (checkPasport.isSelected()){
             msgCin.setText(passportCk());
-
-
-
-        System.out.println(cmbN.getSelectionModel().getSelectedItem());
-        if (cmp == 0){
-            //clientList.add(new Client(inpBadge.getText(),inpCin.getText(),inpPasport.getText(),inpFname.getText(),inpLname.getText(),cmbN.getSelectionModel().getSelectedItem()+"-"+inpPhone.getText(),inpEmail.getText(),inpAddress.getText(),inpCompany.getText(),inpDateStart.getValue()));
-            fillTable();
-
-            inpBadge.clear();
-            inpCin.clear();
-            inpPasport.clear();
-            inpPhone.clear();
-            inpEmail.clear();
-            inpCompany.clear();
-            inpAddress.clear();
-            inpDateStart.getEditor().clear();
-            inpFname.clear();
-            inpLname.clear();
+            inpCin.setText(null);
         }
 
+        if (cmp == 0){
+            Client client = new Client(inpBadge.getText(),inpCin.getText(),inpPasport.getText(),inpFname.getText(),inpLname.getText(),cmbN.getSelectionModel().getSelectedItem()+"-"+inpPhone.getText(),inpEmail.getText(),inpAddress.getText(),inpCompany.getText(),inpDateStart.getValue(),PanelController.id, LocalDate.now());
+            ClientMpl clientMpl = new ClientMpl();
+            Client clientInserted = clientMpl.insertClient(client);
 
+            if(clientInserted == null) {
+
+                alert.setTitle("badge work or cin or passport or email already exists in data base");
+                alert.setHeaderText("Message error");
+                alert.setContentText("Client exists in data base");
+                alert.showAndWait().ifPresent(rs -> {
+                    if (rs == ButtonType.OK) {
+                        System.out.println("Pressed OK.");
+                        //showClientP.getSelectionModel().select(someTab);
+                    }
+                });
+            }else {
+                clientList.add(clientInserted);
+                fillTable();
+                inpBadge.clear();
+                inpCin.clear();
+                inpPasport.clear();
+                inpPhone.clear();
+                inpEmail.clear();
+                inpCompany.clear();
+                inpAddress.clear();
+                inpDateStart.getEditor().clear();
+                inpFname.clear();
+                inpLname.clear();
+
+
+                alert.setTitle("Client Add Successfully");
+                alert.setHeaderText("Message Success");
+                alert.setContentText("Client " + client.getFirstname() + " " + client.getLastname() + " add with success");
+                alert.showAndWait().ifPresent(rs -> {
+                    if (rs == ButtonType.OK) {
+                        System.out.println("Pressed OK.");
+                        selectionModel.select(1);
+                    }
+                });
+            }
+        }
     }
 
     public void fillCmb(){
@@ -280,7 +312,7 @@ public class PanelController implements Initializable {
     }
 
     public void onExitClick(ActionEvent event) {
-        Stage stage = (Stage) btn_exit.getScene().getWindow();
-        stage.close();
+       // Stage stage = (Stage) btn_exit.getScene().getWindow();
+        //stage.close();
     }
 }
