@@ -25,14 +25,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="panelglobal" prefHeight="686.0" prefWidth="1367.0" style="-fx-background-color: #0A1244FF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.controller.PanelController">
+<AnchorPane id="panelglobal" prefHeight="824.0" prefWidth="1347.0" style="-fx-background-color: #0A1244FF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.controller.PanelController">
    <children>
-      <ImageView fx:id="fname" fitHeight="827.0" fitWidth="1414.0" layoutX="-47.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="fname" fitHeight="843.0" fitWidth="1463.0" layoutX="-47.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/hsp.jpg" />
          </image>
       </ImageView>
-      <TabPane fx:id="tabPane" layoutY="4.0" prefHeight="788.0" prefWidth="1367.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="tabPane" prefHeight="819.0" prefWidth="1416.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab fx:id="homeP" style="-fx-background-color: #fff;" text="Home">
             <content>
@@ -262,114 +262,114 @@
           </Tab>
             <Tab fx:id="addClientP" style="-fx-background-color: #fff;" text="Add Client">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="763.0" prefWidth="1367.0">
                      <children>
-                        <Pane layoutX="237.0" layoutY="95.0" prefHeight="511.0" prefWidth="913.0" style="-fx-background-color: #FFFFFFCF;">
+                        <Pane layoutX="154.0" layoutY="95.0" prefHeight="511.0" prefWidth="1140.0" style="-fx-background-color: #FFFFFFCF;">
                            <children>
-                              <Button id="btn_save" fx:id="btnSave" layoutX="644.0" layoutY="458.0" mnemonicParsing="false" onAction="#saveInfo" prefHeight="40.0" prefWidth="184.0" style="-fx-background-color: transparent; -fx-border-color: #4285f4; -fx-border-width: 2px;" text="Save" textFill="#545454">
+                              <Button id="btn_save" fx:id="btnSave" layoutX="793.0" layoutY="461.0" mnemonicParsing="false" onAction="#saveInfo" prefHeight="40.0" prefWidth="184.0" style="-fx-background-color: transparent; -fx-border-color: #4285f4; -fx-border-width: 2px;" text="Save" textFill="#545454">
                                  <font>
                                     <Font name="Calibri Bold" size="19.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor></Button>
-                              <Label layoutX="14.0" layoutY="76.0" text="Badge Number" textFill="#3c3c3c">
+                              <Label layoutX="163.0" layoutY="82.0" text="Badge Number" textFill="#3c3c3c">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="inpBadge" layoutX="139.0" layoutY="71.0" prefHeight="25.0" prefWidth="250.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
-                              <TextField fx:id="inpCompany" layoutX="139.0" layoutY="125.0" prefHeight="25.0" prefWidth="250.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
-                              <Label layoutX="14.0" layoutY="131.0" text="Company Name" textFill="#3c3c3c">
+                              <TextField fx:id="inpBadge" layoutX="288.0" layoutY="74.0" prefHeight="25.0" prefWidth="250.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
+                              <TextField fx:id="inpCompany" layoutX="288.0" layoutY="128.0" prefHeight="25.0" prefWidth="250.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
+                              <Label layoutX="163.0" layoutY="137.0" text="Company Name" textFill="#3c3c3c">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="187.0" text="Work start date" textFill="#3c3c3c">
+                              <Label layoutX="163.0" layoutY="190.0" text="Work start date" textFill="#3c3c3c">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="234.0" text="Address" textFill="#3c3c3c">
+                              <Label layoutX="163.0" layoutY="237.0" text="Address" textFill="#3c3c3c">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="inpCin" layoutX="79.0" layoutY="414.0" prefHeight="26.0" prefWidth="196.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
-                              <Label fx:id="lbCin" layoutX="14.0" layoutY="427.0" text="CIN" textFill="#252525">
+                              <TextField fx:id="inpCin" layoutX="228.0" layoutY="417.0" prefHeight="26.0" prefWidth="196.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
+                              <Label fx:id="lbCin" layoutX="163.0" layoutY="430.0" text="CIN" textFill="#252525">
                                  <font>
                                     <Font name="Calibri Bold" size="17.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="448.0" layoutY="159.0" text="First Name" textFill="#3c3c3c">
+                              <Label layoutX="597.0" layoutY="139.0" text="First Name" textFill="#3c3c3c">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="inpFname" layoutX="558.0" layoutY="153.0" prefHeight="27.0" prefWidth="250.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
-                              <Label layoutX="448.0" layoutY="213.0" text="Last Name" textFill="#3c3c3c">
+                              <TextField fx:id="inpFname" layoutX="707.0" layoutY="128.0" prefHeight="27.0" prefWidth="250.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
+                              <Label layoutX="597.0" layoutY="189.0" text="Last Name" textFill="#3c3c3c">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="inpLname" layoutX="558.0" layoutY="207.0" prefHeight="27.0" prefWidth="251.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
-                              <TextField fx:id="inpEmail" layoutX="558.0" layoutY="251.0" prefHeight="27.0" prefWidth="251.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
-                              <Label layoutX="453.0" layoutY="259.0" text="Email" textFill="#3c3c3c">
+                              <TextField fx:id="inpLname" layoutX="707.0" layoutY="183.0" prefHeight="27.0" prefWidth="251.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
+                              <TextField fx:id="inpEmail" layoutX="707.0" layoutY="241.0" prefHeight="27.0" prefWidth="251.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
+                              <Label layoutX="602.0" layoutY="249.0" text="Email" textFill="#3c3c3c">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="398.0" layoutY="75.0" text="*">
+                              <Label layoutX="547.0" layoutY="78.0" text="*">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="398.0" layoutY="130.0" text="*">
+                              <Label layoutX="547.0" layoutY="133.0" text="*">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="398.0" layoutY="182.0" text="*">
+                              <Label layoutX="547.0" layoutY="185.0" text="*">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="398.0" layoutY="229.0" text="*">
+                              <Label layoutX="547.0" layoutY="232.0" text="*">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="819.0" layoutY="214.0" text="*">
+                              <Label layoutX="968.0" layoutY="190.0" text="*">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="819.0" layoutY="161.0" text="*">
+                              <Label layoutX="968.0" layoutY="136.0" text="*">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="819.0" layoutY="256.0" text="*">
+                              <Label layoutX="968.0" layoutY="259.0" text="*">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="message" layoutX="139.0" layoutY="363.0">
+                              <Label fx:id="message" layoutX="288.0" layoutY="366.0">
                                  <font>
                                     <Font name="Calibri" size="19.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="msgBadg" layoutX="139.0" layoutY="101.0" textFill="#f21313" />
-                              <Label fx:id="msgCompany" layoutX="139.0" layoutY="156.0" textFill="#f21313" />
-                              <Label fx:id="msgWorkstart" layoutX="139.0" layoutY="209.0" textFill="#f21313" />
-                              <Label fx:id="msgAdrress" layoutX="133.0" layoutY="355.0" prefHeight="17.0" textFill="#f21313" />
-                              <Label fx:id="msgCin" layoutX="30.0" layoutY="457.0" textFill="#f21313" />
-                              <Label fx:id="msgFname" layoutX="561.0" layoutY="183.0" textFill="#f21313" />
-                              <Label fx:id="msgLname" layoutX="560.0" layoutY="238.0" textFill="#f21313" />
-                              <Label fx:id="msgEmail" layoutX="561.0" layoutY="285.0" textFill="#f21313" />
-                              <DatePicker fx:id="inpDateStart" layoutX="138.0" layoutY="182.0" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: transeparent; -fx-border-width: 0 0 2px 0; -fx-border-color: #4285f4;" />
-                              <TextArea fx:id="inpAddress" layoutX="139.0" layoutY="232.0" prefHeight="122.0" prefWidth="250.0" style="-fx-border-color: #4285f4;" />
-                              <RadioButton fx:id="checkCin" layoutX="61.0" layoutY="375.0" mnemonicParsing="false" onAction="#cinInp" selected="true" text="CIN" textFill="#3c3c3c">
+                              <Label fx:id="msgBadg" layoutX="288.0" layoutY="104.0" textFill="#f21313" />
+                              <Label fx:id="msgCompany" layoutX="288.0" layoutY="159.0" textFill="#f21313" />
+                              <Label fx:id="msgWorkstart" layoutX="288.0" layoutY="212.0" textFill="#f21313" />
+                              <Label fx:id="msgAdrress" layoutX="282.0" layoutY="358.0" prefHeight="17.0" textFill="#f21313" />
+                              <Label fx:id="msgCin" layoutX="179.0" layoutY="460.0" textFill="#f21313" />
+                              <Label fx:id="msgFname" layoutX="710.0" layoutY="186.0" textFill="#f21313" />
+                              <Label fx:id="msgLname" layoutX="709.0" layoutY="241.0" textFill="#f21313" />
+                              <Label fx:id="msgEmail" layoutX="710.0" layoutY="288.0" textFill="#f21313" />
+                              <DatePicker fx:id="inpDateStart" layoutX="287.0" layoutY="185.0" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: transeparent; -fx-border-width: 0 0 2px 0; -fx-border-color: #4285f4;" />
+                              <TextArea fx:id="inpAddress" layoutX="288.0" layoutY="235.0" prefHeight="122.0" prefWidth="250.0" style="-fx-border-color: #4285f4;" />
+                              <RadioButton fx:id="checkCin" layoutX="210.0" layoutY="378.0" mnemonicParsing="false" onAction="#cinInp" selected="true" text="CIN" textFill="#3c3c3c">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -377,36 +377,36 @@
                                     <ToggleGroup fx:id="idn" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="checkPasport" layoutX="149.0" layoutY="375.0" mnemonicParsing="false" onAction="#passInp" text="Pasport" textFill="#3c3c3c" toggleGroup="$idn">
+                              <RadioButton fx:id="checkPasport" layoutX="298.0" layoutY="378.0" mnemonicParsing="false" onAction="#passInp" text="Pasport" textFill="#3c3c3c" toggleGroup="$idn">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </RadioButton>
-                              <Label layoutX="819.0" layoutY="90.0" text="*">
+                              <Label layoutX="968.0" layoutY="83.0" text="*">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="inpPhone" layoutX="655.0" layoutY="84.0" prefHeight="26.0" prefWidth="155.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
-                              <Label layoutX="448.0" layoutY="92.0" text="Phone Number" textFill="#3c3c3c">
+                              <TextField fx:id="inpPhone" layoutX="804.0" layoutY="77.0" prefHeight="26.0" prefWidth="155.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" />
+                              <Label layoutX="597.0" layoutY="85.0" text="Phone Number" textFill="#3c3c3c">
                                  <font>
                                     <Font name="Calibri" size="16.0" />
                                  </font>
                               </Label>
-                              <ComboBox fx:id="cmbN" layoutX="558.0" layoutY="85.0" prefHeight="26.0" prefWidth="92.0" promptText="MA +212" style="-fx-background-color: transparent; -fx-border-width: 0 0 2px 0; -fx-border-color: #4285f4;" />
-                              <Label fx:id="lbPassport" layoutX="15.0" layoutY="426.0" text="Passport" textFill="#545454" visible="false">
+                              <ComboBox fx:id="cmbN" layoutX="707.0" layoutY="78.0" prefHeight="26.0" prefWidth="92.0" promptText="MA +212" style="-fx-background-color: transparent; -fx-border-width: 0 0 2px 0; -fx-border-color: #4285f4;" />
+                              <Label fx:id="lbPassport" layoutX="164.0" layoutY="429.0" text="Passport" textFill="#545454" visible="false">
                                  <font>
                                     <Font name="Calibri Bold" size="17.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="inpPasport" layoutX="96.0" layoutY="414.0" prefHeight="26.0" prefWidth="179.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" visible="false" />
-                              <Label layoutX="280.0" layoutY="11.0" text="ADD CLIENT FORM" textFill="#3c3c3c" underline="true">
+                              <TextField fx:id="inpPasport" layoutX="245.0" layoutY="417.0" prefHeight="26.0" prefWidth="179.0" style="-fx-border-color: #4285f4; -fx-border-width: 0 0 2px 0; -fx-background-color: transparent;" visible="false" />
+                              <Label layoutX="429.0" layoutY="14.0" text="ADD CLIENT FORM" textFill="#4285f4" underline="true">
                                  <font>
                                     <Font name="Book Antiqua" size="30.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lbPhone" layoutX="558.0" layoutY="123.0" textFill="#ee1717" />
-                              <Label fx:id="msgDate" layoutX="133.0" layoutY="209.0" textFill="#e81111" />
+                              <Label fx:id="lbPhone" layoutX="707.0" layoutY="126.0" textFill="#ee1717" />
+                              <Label fx:id="msgDate" layoutX="282.0" layoutY="212.0" textFill="#e81111" />
                            </children>
                         </Pane>
                      </children>
@@ -417,7 +417,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Pane layoutX="80.0" layoutY="14.0" prefHeight="738.0" prefWidth="1250.0" style="-fx-background-color: #fff;">
+                        <Pane layoutX="80.0" layoutY="14.0" prefHeight="738.0" prefWidth="1250.0" style="-fx-background-color: rgba(255,255,255,0.55);">
                            <children>
                               <StackedBarChart fx:id="stakedBarChart" layoutX="19.0" prefHeight="400.0" prefWidth="602.0" title="Statistics clients date created by months">
                                 <xAxis>
@@ -427,7 +427,7 @@
                                   <NumberAxis side="LEFT" />
                                 </yAxis>
                               </StackedBarChart>
-                              <LineChart fx:id="chartLine" layoutX="659.0" prefHeight="400.0" prefWidth="553.0" title="Statistics clients by date start work by months">
+                              <LineChart fx:id="chartLine" layoutX="659.0" prefHeight="400.0" prefWidth="553.0" title="Statistics clients  date start work by months">
                                 <xAxis>
                                   <CategoryAxis side="BOTTOM" />
                                 </xAxis>
@@ -435,7 +435,7 @@
                                   <NumberAxis side="LEFT" />
                                 </yAxis>
                               </LineChart>
-                              <AreaChart fx:id="areaChart" layoutX="25.0" layoutY="400.0" prefHeight="313.0" prefWidth="1200.0">
+                              <AreaChart fx:id="areaChart" layoutX="25.0" layoutY="400.0" prefHeight="313.0" prefWidth="1200.0" title="Statistics clients created by year">
                                 <xAxis>
                                   <CategoryAxis side="BOTTOM" />
                                 </xAxis>
