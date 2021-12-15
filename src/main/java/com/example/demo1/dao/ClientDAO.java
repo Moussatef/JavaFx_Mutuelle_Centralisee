@@ -21,7 +21,7 @@ public class ClientDAO extends DAO<Client>{
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(query);
             while (queryResult.next()) {
-                clientList.add(new Client(queryResult.getInt("client_id"),queryResult.getString("work_badge"),queryResult.getString("cin"),queryResult.getString("passport"),queryResult.getString("firstname"),queryResult.getString("lastname"),queryResult.getString("phone"),queryResult.getString("email"),queryResult.getString("address"),queryResult.getString("company_name"),LocalDate.parse(queryResult.getDate("hire_date").toString()),queryResult.getInt("official_id"),LocalDate.parse(queryResult.getDate("created_at").toString())));
+                fetch(clientList, queryResult);
             }
             return clientList;
 
@@ -44,7 +44,7 @@ public class ClientDAO extends DAO<Client>{
             ResultSet queryResult = statement.executeQuery();
             while (queryResult.next()) {
                 System.out.println(queryResult.getString("email"));
-                 clientList.add(new Client(queryResult.getInt("client_id"),queryResult.getString("work_badge"),queryResult.getString("cin"),queryResult.getString("passport"),queryResult.getString("firstname"),queryResult.getString("lastname"),queryResult.getString("phone"),queryResult.getString("email"),queryResult.getString("address"),queryResult.getString("company_name"),LocalDate.parse(queryResult.getDate("hire_date").toString()),queryResult.getInt("official_id"),LocalDate.parse(queryResult.getDate("created_at").toString())));
+                fetch(clientList, queryResult);
             }
 
         }catch (Exception e){
@@ -52,10 +52,48 @@ public class ClientDAO extends DAO<Client>{
             e.getCause();
         }
 
+        return clientList;
+    }
+
+    private void fetch(List<Client> clientList, ResultSet queryResult) throws SQLException {
+        clientList.add(new Client(queryResult.getInt("client_id"),queryResult.getString("work_badge"),queryResult.getString("cin"),queryResult.getString("passport"),queryResult.getString("firstname"),queryResult.getString("lastname"),queryResult.getString("phone"),queryResult.getString("email"),queryResult.getString("address"),queryResult.getString("company_name"), LocalDate.parse(queryResult.getDate("hire_date").toString()),queryResult.getInt("official_id"),LocalDate.parse(queryResult.getDate("created_at").toString())));
+    }
+
+    public List<Client> filterClient(String badge,String fName,String lName,String cin,String email){
+        List<Client> clientList = new ArrayList<>();
+        String query = null ;
+        if(badge.length() > 0)
+            query = "SELECT * FROM client WHERE work_badge LIKE '"+badge+"%'  ";
+        if(fName.length() > 0)
+            query = "SELECT * FROM client WHERE firstname LIKE '"+fName+"%'  ";
+        if (lName.length() > 0)
+            query = "SELECT * FROM client WHERE lastname LIKE '"+lName+"%'  ";
+        if(cin.length() > 0)
+            query = "SELECT * FROM client WHERE cin LIKE '"+cin+"%'  ";
+        if (email.length() > 0)
+            query = "SELECT * FROM client WHERE email LIKE '"+email+"%'  ";
+        if (badge.length() > 0 || fName.length() > 0 || lName.length() > 0 || cin.length() > 0 || email.length() > 0 )
+            query = "SELECT * FROM client WHERE work_badge LIKE '"+badge+"%' or firstname LIKE '"+fName+"%' or lastname LIKE '"+lName+"%' or cin LIKE '"+cin+"%' or email LIKE '"+email+"%' ";
+        if (badge.length() > 0 && fName.length() > 0 && lName.length() > 0 && cin.length() > 0 && email.length() > 0 )
+            query = "SELECT * FROM client WHERE work_badge LIKE '"+badge+"%' and firstname LIKE '"+fName+"%' and lastname LIKE '"+lName+"%' and cin LIKE '"+cin+"%' and email LIKE '"+email+"%' ";
+
+
+        if(query != null)
+            try{
+                Statement statement = connectDB.createStatement();
+                ResultSet queryResult = statement.executeQuery(query);
+                while (queryResult.next()) {
+                    System.out.println(queryResult.getString("cin"));
+                    fetch(clientList, queryResult);
+                }
+
+
+            }catch (Exception e){
+                e.printStackTrace();
+                e.getCause();
+            }
 
         return clientList;
-
-
     }
 
     @Override

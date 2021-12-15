@@ -12,7 +12,7 @@ import java.sql.Statement;
 public class OfficialsDAO extends DAO<Officials>{
 
     public Officials getOfficialByEmailAndPassword(String email,String password){
-         String verifyLogin = " SELECT * FROM officials inner join entity on officials.ent_id = entity.ent_id WHERE email  ='"+email+"' and password='"+password+"';";
+         String verifyLogin = " SELECT * FROM officials inner join entity on officials.ent_id = entity.ent_id WHERE email  ='"+email+"' and password='"+password+"' LIMIT 1;";
             try{
                 Statement statement = connectDB.createStatement();
                 ResultSet queryResult = statement.executeQuery(verifyLogin);
@@ -32,7 +32,7 @@ public class OfficialsDAO extends DAO<Officials>{
     }
     @Override
     public Officials find(int id) {
-        String verifyLogin = " SELECT * FROM officials inner join entity on officials.ent_id = entity.ent_id WHERE official_id ="+id;
+        String verifyLogin = " SELECT * FROM officials inner join entity on officials.ent_id = entity.ent_id WHERE official_id ="+id+" LIMIT 1";
         try{
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
@@ -51,6 +51,7 @@ public class OfficialsDAO extends DAO<Officials>{
         }
         return null;
     }
+
 
     @Override
     public Officials create(Officials obj) {

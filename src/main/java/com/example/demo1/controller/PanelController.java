@@ -3,6 +3,7 @@ package com.example.demo1.controller;
 import com.example.demo1.model.Client;
 import com.example.demo1.model.Officials;
 import com.example.demo1.mpl.ClientMpl;
+import com.example.demo1.mpl.FactoryDAO;
 import com.example.demo1.mpl.OfficialImp;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -54,6 +55,12 @@ public class PanelController implements Initializable {
     @FXML private TextField inpPhone;
     @FXML private Label msgDate;
 
+    @FXML private TextField fil_fname;
+    @FXML private TextField fil_lname;
+    @FXML private TextField fil_email;
+    @FXML private TextField fil_badge;
+    @FXML private TextField filcin;
+
     //labels show information
     @FXML private Label official_name;
     @FXML private Label official_cin;
@@ -76,6 +83,7 @@ public class PanelController implements Initializable {
     @FXML private  TableColumn<Client,String> email;
     @FXML private  TableColumn<Client,String> address;
     @FXML private  TableColumn<Client,String> dateStart;
+    @FXML private  TableColumn<Client,String> created_at;
 
     @FXML private Tab showClientP;
     @FXML private Tab addClientP;
@@ -92,12 +100,23 @@ public class PanelController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        officials = new OfficialImp().getOfficialById(id);
-        clientList = new ClientMpl().getListClientForOfficial(id);
+        officials =  FactoryDAO.getOfficialById(id);
+        clientList = FactoryDAO.getListClientForOfficial(id);
         fillCmb();
         fillLabelsInfo();
         fillTable();
 
+    }
+
+    public void filterTableClient(String badge,String fName,String lName,String cin,String email){
+
+        clientList = FactoryDAO.filterClient(badge, fName, lName, cin, email);
+
+    }
+
+    public void onFilterClick(ActionEvent event) {
+        filterTableClient(fil_badge.getText(),fil_fname.getText(),fil_lname.getText(),filcin.getText(),fil_email.getText());
+        fillTable();
     }
 
     public void fillLabelsInfo(){
@@ -126,6 +145,7 @@ public class PanelController implements Initializable {
         address.setCellValueFactory(new PropertyValueFactory<Client, String>("Address"));
         passport.setCellValueFactory(new PropertyValueFactory<Client, String>("passport"));
         dateStart.setCellValueFactory(new PropertyValueFactory<Client, String>("DateStart"));
+        created_at.setCellValueFactory(new PropertyValueFactory<Client, String>("Created_at"));
         tableView.getItems().setAll(clientData);
     }
 
@@ -153,8 +173,7 @@ public class PanelController implements Initializable {
 
         if (cmp == 0){
             Client client = new Client(inpBadge.getText(),inpCin.getText(),inpPasport.getText(),inpFname.getText(),inpLname.getText(),cmbN.getSelectionModel().getSelectedItem()+"-"+inpPhone.getText(),inpEmail.getText(),inpAddress.getText(),inpCompany.getText(),inpDateStart.getValue(),PanelController.id, LocalDate.now());
-            ClientMpl clientMpl = new ClientMpl();
-            Client clientInserted = clientMpl.insertClient(client);
+            Client clientInserted = FactoryDAO.insertClient(client);
 
             if(clientInserted == null) {
 
@@ -311,8 +330,5 @@ public class PanelController implements Initializable {
         return "";
     }
 
-    public void onExitClick(ActionEvent event) {
-       // Stage stage = (Stage) btn_exit.getScene().getWindow();
-        //stage.close();
-    }
+
 }
