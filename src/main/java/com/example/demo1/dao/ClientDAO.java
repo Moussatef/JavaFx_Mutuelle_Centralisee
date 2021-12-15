@@ -118,17 +118,61 @@ public class ClientDAO extends DAO<Client>{
         return clientList;
     }
 
-    public XYChart.Series getStaticMonth(){
-        String query = "SELECT MONTHNAME(hire_date) as \"months\" ,MONTH(hire_date),count(*) as \"nb_client\" FROM client   GROUP BY  MONTH(hire_date)ORDER BY MONTH(hire_date);";
+    public XYChart.Series getStaticMonthStartWork(){
+        String query = "SELECT MONTHNAME(hire_date) as \"months\" ,MONTH(hire_date),count(*) as \"nb_client\" FROM client WHERE official_id ="+PanelController.id+"   GROUP BY  MONTH(hire_date)ORDER BY MONTH(hire_date);";
 
         XYChart.Series series = new XYChart.Series();
-        series.setName("Client created");
+        series.setName("NB Client hire by month");
         try{
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(query);
             while (queryResult.next()) {
                 System.out.println(queryResult.getString("months")+" "+queryResult.getInt(3));
                 series.getData().add(new XYChart.Data(queryResult.getString(1),queryResult.getInt(3)));
+            }
+            return series;
+        }catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+
+        return null;
+
+    }
+
+    public XYChart.Series getStaticDaysCreated(){
+        String query = "SELECT  DAYNAME(created_at) as \"day\" , DAY(created_at) ,count(*) as \"nb_client\" FROM client WHERE official_id ="+PanelController.id+"   GROUP BY DAY(created_at) ORDER BY DAY(created_at);";
+
+        XYChart.Series series = new XYChart.Series();
+        series.setName("NB client created by day");
+        try{
+            Statement statement = connectDB.createStatement();
+            ResultSet queryResult = statement.executeQuery(query);
+            while (queryResult.next()) {
+                System.out.println(queryResult.getString(1)+" "+queryResult.getInt(3));
+                series.getData().add(new XYChart.Data(queryResult.getString(1),queryResult.getInt(3)));
+            }
+            return series;
+        }catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+
+        return null;
+
+    }
+
+    public XYChart.Series getStaticYearCreated(){
+        String query = "SELECT  year(hire_date) as \"year\" , count(*) as \"nb_client\" FROM client WHERE official_id ="+PanelController.id+"   GROUP BY year(hire_date) ORDER BY year(hire_date);";
+
+        XYChart.Series series = new XYChart.Series();
+        series.setName("NB client created by year");
+        try{
+            Statement statement = connectDB.createStatement();
+            ResultSet queryResult = statement.executeQuery(query);
+            while (queryResult.next()) {
+                System.out.println(queryResult.getString(1)+" "+queryResult.getInt(2));
+                series.getData().add(new XYChart.Data(queryResult.getString(1),queryResult.getInt(2)));
             }
             return series;
         }catch (Exception e){

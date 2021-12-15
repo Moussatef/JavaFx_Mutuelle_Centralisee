@@ -435,7 +435,7 @@
                                   <NumberAxis side="LEFT" />
                                 </yAxis>
                               </LineChart>
-                              <AreaChart layoutX="25.0" layoutY="400.0" prefHeight="313.0" prefWidth="1200.0">
+                              <AreaChart fx:id="areaChart" layoutX="25.0" layoutY="400.0" prefHeight="313.0" prefWidth="1200.0">
                                 <xAxis>
                                   <CategoryAxis side="BOTTOM" />
                                 </xAxis>

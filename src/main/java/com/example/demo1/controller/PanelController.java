@@ -10,8 +10,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.LineChart;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.*;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
@@ -90,6 +89,8 @@ public class PanelController implements Initializable {
     @FXML private TabPane tabPane;
 
     @FXML private LineChart chartLine;
+    @FXML private StackedBarChart stakedBarChart;
+    @FXML private AreaChart areaChart;
 
     public int cmp = 0;
     private Officials officials;
@@ -106,6 +107,8 @@ public class PanelController implements Initializable {
         fillLabelsInfo();
         fillTable();
         statisticsDateStart();
+        statisticsCreatedDay();
+        statisticsCreatedYear();
 
     }
 
@@ -114,6 +117,18 @@ public class PanelController implements Initializable {
         XYChart.Series series = FactoryDAO.getStatisticMonth();
         chartLine.getData().add(series);
     }
+
+    public void statisticsCreatedDay(){
+
+        XYChart.Series series = FactoryDAO.getStatisticDayCreated();
+        stakedBarChart.getData().add(series);
+    }
+    public void statisticsCreatedYear(){
+
+        XYChart.Series series = FactoryDAO.getStatisticYearCreated();
+        areaChart.getData().add(series);
+    }
+
 
     public void filterTableClient(String badge,String fName,String lName,String cin,String email){
 
@@ -224,6 +239,9 @@ public class PanelController implements Initializable {
                 });
             }
         }
+        statisticsDateStart();
+        statisticsCreatedDay();
+        statisticsCreatedYear();
     }
 
     public void fillCmb(){

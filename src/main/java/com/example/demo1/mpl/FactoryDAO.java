@@ -39,8 +39,18 @@ public  class FactoryDAO {
     }
 
     public static XYChart.Series getStatisticMonth(){
-        return new ClientDAO().getStaticMonth();
+        return new ClientDAO().getStaticMonthStartWork();
     }
+
+    public static XYChart.Series getStatisticDayCreated(){
+        return new ClientDAO().getStaticDaysCreated();
+    }
+
+    public static XYChart.Series getStatisticYearCreated(){
+        return new ClientDAO().getStaticYearCreated();
+    }
+
+
 
 
 
