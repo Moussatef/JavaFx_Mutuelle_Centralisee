@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="panelglobal" prefHeight="686.0" prefWidth="1367.0" style="-fx-background-color: #0A1244FF;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.controller.PanelController">
+<AnchorPane id="panelglobal" prefHeight="686.0" prefWidth="1367.0" style="-fx-background-color: #0A1244FF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.controller.PanelController">
    <children>
       <ImageView fx:id="fname" fitHeight="827.0" fitWidth="1414.0" layoutX="-47.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -393,6 +412,42 @@
                      </children>
                   </AnchorPane>
                </content>
+            </Tab>
+            <Tab style="-fx-background-color: #fff;" text="Statistics">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="80.0" layoutY="14.0" prefHeight="738.0" prefWidth="1250.0" style="-fx-background-color: #fff;">
+                           <children>
+                              <StackedBarChart fx:id="stakedBarChart" layoutX="19.0" prefHeight="400.0" prefWidth="602.0" title="Statistics clients date created by months">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </StackedBarChart>
+                              <LineChart fx:id="chartLine" layoutX="659.0" prefHeight="400.0" prefWidth="553.0" title="Statistics clients by date start work by months">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </LineChart>
+                              <AreaChart layoutX="25.0" layoutY="400.0" prefHeight="313.0" prefWidth="1200.0">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </AreaChart>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+              </content>
             </Tab>
         </tabs>
       </TabPane>

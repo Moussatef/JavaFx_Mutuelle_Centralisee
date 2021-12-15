@@ -4,7 +4,9 @@ import com.example.demo1.dao.ClientDAO;
 import com.example.demo1.dao.OfficialsDAO;
 import com.example.demo1.model.Client;
 import com.example.demo1.model.Officials;
+import javafx.scene.chart.XYChart;
 
+import java.util.HashMap;
 import java.util.List;
 
 public  class FactoryDAO {
@@ -28,10 +30,16 @@ public  class FactoryDAO {
         return new ClientDAO().filterClient( badge, fName, lName, cin, email);
     }
 
+
+
     public static Client insertClient(Client client){
 
         return new ClientDAO().create(client);
 
+    }
+
+    public static XYChart.Series getStatisticMonth(){
+        return new ClientDAO().getStaticMonth();
     }
 
 

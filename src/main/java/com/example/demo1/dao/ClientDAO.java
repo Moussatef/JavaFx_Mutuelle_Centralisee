@@ -5,10 +5,12 @@ import com.example.demo1.controller.PanelController;
 import com.example.demo1.model.Client;
 import com.example.demo1.model.Entity;
 import com.example.demo1.model.Officials;
+import javafx.scene.chart.XYChart;
 
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class ClientDAO extends DAO<Client>{
@@ -44,7 +46,8 @@ public class ClientDAO extends DAO<Client>{
             ResultSet queryResult = statement.executeQuery();
             while (queryResult.next()) {
                 System.out.println(queryResult.getString("email"));
-                fetch(clientList, queryResult);
+                clientList.add(new Client(queryResult.getInt("client_id"),queryResult.getString("work_badge"),queryResult.getString("cin"),queryResult.getString("passport"),queryResult.getString("firstname"),queryResult.getString("lastname"),queryResult.getString("phone"),queryResult.getString("email"),queryResult.getString("address"),queryResult.getString("company_name"), LocalDate.parse(queryResult.getDate("hire_date").toString()),queryResult.getInt("official_id"),LocalDate.parse(queryResult.getDate("created_at").toString())));
+
             }
 
         }catch (Exception e){
@@ -62,20 +65,41 @@ public class ClientDAO extends DAO<Client>{
     public List<Client> filterClient(String badge,String fName,String lName,String cin,String email){
         List<Client> clientList = new ArrayList<>();
         String query = null ;
-        if(badge.length() > 0)
-            query = "SELECT * FROM client WHERE work_badge LIKE '"+badge+"%'  ";
+/*
+        query = badge != null ? "SELECT * FROM client WHERE work_badge LIKE '"+badge+"%'  and official_id="+PanelController.id : query;
+
+        query = fName != null ? "SELECT * FROM client WHERE firstname LIKE '"+fName+"%'  and official_id="+PanelController.id : query;
+
+        query = lName != null ? "SELECT * FROM client WHERE lastname LIKE '"+lName+"%'  and official_id="+PanelController.id : query;
+
+        query = cin != null ? "SELECT * FROM client WHERE cin LIKE '"+cin+"%'  and official_id="+PanelController.id : query;
+
+        query = email != null ? "SELECT * FROM client WHERE email LIKE '"+email+"%'  and official_id="+PanelController.id : query;
+
+ */
+        /*
         if(fName.length() > 0)
-            query = "SELECT * FROM client WHERE firstname LIKE '"+fName+"%'  ";
+
         if (lName.length() > 0)
-            query = "SELECT * FROM client WHERE lastname LIKE '"+lName+"%'  ";
+
         if(cin.length() > 0)
-            query = "SELECT * FROM client WHERE cin LIKE '"+cin+"%'  ";
+
         if (email.length() > 0)
-            query = "SELECT * FROM client WHERE email LIKE '"+email+"%'  ";
-        if (badge.length() > 0 || fName.length() > 0 || lName.length() > 0 || cin.length() > 0 || email.length() > 0 )
-            query = "SELECT * FROM client WHERE work_badge LIKE '"+badge+"%' or firstname LIKE '"+fName+"%' or lastname LIKE '"+lName+"%' or cin LIKE '"+cin+"%' or email LIKE '"+email+"%' ";
-        if (badge.length() > 0 && fName.length() > 0 && lName.length() > 0 && cin.length() > 0 && email.length() > 0 )
-            query = "SELECT * FROM client WHERE work_badge LIKE '"+badge+"%' and firstname LIKE '"+fName+"%' and lastname LIKE '"+lName+"%' and cin LIKE '"+cin+"%' and email LIKE '"+email+"%' ";
+
+         */
+
+         if (badge != null || fName != null || lName != null || cin != null || email != null ){
+             query = "SELECT * FROM client WHERE work_badge LIKE '"+badge+"%' or firstname LIKE '"+fName+"%' or lastname LIKE '"+lName+"%' or cin LIKE '"+cin+"%' or email LIKE '"+email+"%' and official_id ="+PanelController.id;
+             //query = "SELECT * FROM client  WHERE work_badge LIKE '"+badge+"%' and firstname LIKE '"+fName+"%' and lastname LIKE '"+lName+"%' and cin LIKE '"+cin+"%' and email LIKE '"+email+"%' and official_id ="+PanelController.id;
+
+         }
+
+         if (badge!= null && fName!= null && lName!= null && cin!= null && email!= null ){
+             query = "SELECT * FROM client   WHERE work_badge LIKE '"+badge+"%' and firstname LIKE '"+fName+"%' and lastname LIKE '"+lName+"%' and cin LIKE '"+cin+"%' and email LIKE '"+email+"%' and official_id ="+PanelController.id;
+
+         }
+
+        System.out.println(query);
 
 
         if(query != null)
@@ -84,16 +108,36 @@ public class ClientDAO extends DAO<Client>{
                 ResultSet queryResult = statement.executeQuery(query);
                 while (queryResult.next()) {
                     System.out.println(queryResult.getString("cin"));
-                    fetch(clientList, queryResult);
+                    clientList.add(new Client(queryResult.getInt("client_id"),queryResult.getString("work_badge"),queryResult.getString("cin"),queryResult.getString("passport"),queryResult.getString("firstname"),queryResult.getString("lastname"),queryResult.getString("phone"),queryResult.getString("email"),queryResult.getString("address"),queryResult.getString("company_name"), LocalDate.parse(queryResult.getDate("hire_date").toString()),queryResult.getInt("official_id"),LocalDate.parse(queryResult.getDate("created_at").toString())));
+
                 }
-
-
             }catch (Exception e){
                 e.printStackTrace();
                 e.getCause();
             }
-
         return clientList;
+    }
+
+    public XYChart.Series getStaticMonth(){
+        String query = "SELECT MONTHNAME(hire_date) as \"months\" ,MONTH(hire_date),count(*) as \"nb_client\" FROM client   GROUP BY  MONTH(hire_date)ORDER BY MONTH(hire_date);";
+
+        XYChart.Series series = new XYChart.Series();
+        series.setName("Client created");
+        try{
+            Statement statement = connectDB.createStatement();
+            ResultSet queryResult = statement.executeQuery(query);
+            while (queryResult.next()) {
+                System.out.println(queryResult.getString("months")+" "+queryResult.getInt(3));
+                series.getData().add(new XYChart.Data(queryResult.getString(1),queryResult.getInt(3)));
+            }
+            return series;
+        }catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+
+        return null;
+
     }
 
     @Override

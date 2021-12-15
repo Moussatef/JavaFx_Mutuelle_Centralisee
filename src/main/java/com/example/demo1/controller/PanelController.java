@@ -10,6 +10,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
@@ -21,10 +23,7 @@ import javax.security.auth.callback.ConfirmationCallback;
 import java.io.FileReader;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class PanelController implements Initializable {
     public static int id  ;
@@ -90,6 +89,7 @@ public class PanelController implements Initializable {
     @FXML private Tab homeP;
     @FXML private TabPane tabPane;
 
+    @FXML private LineChart chartLine;
 
     public int cmp = 0;
     private Officials officials;
@@ -105,7 +105,14 @@ public class PanelController implements Initializable {
         fillCmb();
         fillLabelsInfo();
         fillTable();
+        statisticsDateStart();
 
+    }
+
+    public void statisticsDateStart(){
+
+        XYChart.Series series = FactoryDAO.getStatisticMonth();
+        chartLine.getData().add(series);
     }
 
     public void filterTableClient(String badge,String fName,String lName,String cin,String email){
@@ -115,7 +122,13 @@ public class PanelController implements Initializable {
     }
 
     public void onFilterClick(ActionEvent event) {
-        filterTableClient(fil_badge.getText(),fil_fname.getText(),fil_lname.getText(),filcin.getText(),fil_email.getText());
+        String badge = !fil_badge.getText().isEmpty() ? fil_badge.getText() : null;
+        String fName = fil_fname.getText().length() > 0 ? fil_fname.getText() : null;
+        String lName = fil_lname.getText().length() > 0 ? fil_lname.getText() : null;
+        String cin = filcin.getText().length() > 0 ? filcin.getText() : null;
+        String email = fil_email.getText().length() > 0 ? fil_email.getText() : null;
+
+        filterTableClient(badge,fName,lName,cin,email);
         fillTable();
     }
 
@@ -148,7 +161,6 @@ public class PanelController implements Initializable {
         created_at.setCellValueFactory(new PropertyValueFactory<Client, String>("Created_at"));
         tableView.getItems().setAll(clientData);
     }
-
     public void saveInfo(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();

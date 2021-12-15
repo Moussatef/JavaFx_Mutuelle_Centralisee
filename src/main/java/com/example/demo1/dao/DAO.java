@@ -7,9 +7,6 @@ public abstract class DAO<T> {
 
     public DatabaseConnection connectNow = new DatabaseConnection();
     public Connection connectDB = connectNow.getConnection("mutuelle_centralisee","root","tooor");
-
-
-
     /**
      * Permet de récupérer un objet via son ID
      * @param id
