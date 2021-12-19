@@ -4,7 +4,6 @@ module com.example.demo1 {
 
     requires org.controlsfx.controls;
     requires validatorfx;
-    requires org.kordamp.bootstrapfx.core;
     requires json.simple;
     requires java.sql;
 

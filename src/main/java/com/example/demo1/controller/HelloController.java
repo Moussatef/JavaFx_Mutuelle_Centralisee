@@ -4,6 +4,7 @@ import com.example.demo1.HelloApplication;
 import com.example.demo1.connection.DatabaseConnection;
 import com.example.demo1.interfases.OfficialsInterface;
 import com.example.demo1.model.Officials;
+import com.example.demo1.mpl.FactoryDAO;
 import com.example.demo1.mpl.OfficialImp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -54,8 +55,7 @@ public class HelloController {
     }
     public void validateLogin(String email,String password) throws IOException {
         HelloApplication form = new HelloApplication();
-        OfficialImp official = new OfficialImp();
-        Officials officials = official.getOfficialByEmailAndPassword(email,password);
+        Officials officials = FactoryDAO.getOfficialByEmailAndPassword(email,password);
 
         if (officials != null){
             form.changeScene("panelControlle.fxml");

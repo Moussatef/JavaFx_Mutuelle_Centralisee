@@ -367,7 +367,7 @@
                               <Label fx:id="msgFname" layoutX="710.0" layoutY="186.0" textFill="#f21313" />
                               <Label fx:id="msgLname" layoutX="709.0" layoutY="241.0" textFill="#f21313" />
                               <Label fx:id="msgEmail" layoutX="710.0" layoutY="288.0" textFill="#f21313" />
-                              <DatePicker fx:id="inpDateStart" layoutX="287.0" layoutY="185.0" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: transeparent; -fx-border-width: 0 0 2px 0; -fx-border-color: #4285f4;" />
+                              <DatePicker fx:id="inpDateStart" layoutX="287.0" layoutY="185.0" prefHeight="25.0" prefWidth="250.0" style="-fx-border-width: 0 0 2px 0; -fx-border-color: #4285f4;" />
                               <TextArea fx:id="inpAddress" layoutX="288.0" layoutY="235.0" prefHeight="122.0" prefWidth="250.0" style="-fx-border-color: #4285f4;" />
                               <RadioButton fx:id="checkCin" layoutX="210.0" layoutY="378.0" mnemonicParsing="false" onAction="#cinInp" selected="true" text="CIN" textFill="#3c3c3c">
                                  <font>
@@ -419,7 +419,7 @@
                      <children>
                         <Pane layoutX="80.0" layoutY="14.0" prefHeight="738.0" prefWidth="1250.0" style="-fx-background-color: rgba(255,255,255,0.55);">
                            <children>
-                              <StackedBarChart fx:id="stakedBarChart" layoutX="19.0" prefHeight="400.0" prefWidth="602.0" title="Statistics clients date created by months">
+                              <StackedBarChart fx:id="stakedBarChart" layoutX="19.0" prefHeight="400.0" prefWidth="602.0" title="Statistics clients date created by day">
                                 <xAxis>
                                   <CategoryAxis side="BOTTOM" />
                                 </xAxis>
