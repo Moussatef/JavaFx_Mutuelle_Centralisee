@@ -1,6 +1,7 @@
-package com.example.demo1.dao;
+package com.example.demo1.daoImpl;
 
 import com.example.demo1.controller.PanelController;
+import com.example.demo1.dao.DAO;
 import com.example.demo1.model.Client;
 import javafx.scene.chart.XYChart;
 

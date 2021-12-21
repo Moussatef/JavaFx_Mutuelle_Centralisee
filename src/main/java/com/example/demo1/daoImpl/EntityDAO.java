@@ -1,5 +1,6 @@
-package com.example.demo1.dao;
+package com.example.demo1.daoImpl;
 
+import com.example.demo1.dao.DAO;
 import com.example.demo1.model.Entity;
 
 public class EntityDAO extends DAO<Entity> {

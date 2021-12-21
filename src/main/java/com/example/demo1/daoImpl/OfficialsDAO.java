@@ -1,7 +1,8 @@
-package com.example.demo1.dao;
+package com.example.demo1.daoImpl;
 
 import com.example.demo1.connection.DatabaseConnection;
 import com.example.demo1.controller.PanelController;
+import com.example.demo1.dao.DAO;
 import com.example.demo1.model.Entity;
 import com.example.demo1.model.Officials;
 
@@ -9,7 +10,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class OfficialsDAO extends DAO<Officials>{
+public class OfficialsDAO extends DAO<Officials> {
 
     public Officials getOfficialByEmailAndPassword(String email,String password){
          String verifyLogin = " SELECT * FROM officials inner join entity on officials.ent_id = entity.ent_id WHERE email  ='"+email+"' and password='"+password+"' LIMIT 1;";

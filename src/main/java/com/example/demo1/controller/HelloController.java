@@ -1,11 +1,9 @@
 package com.example.demo1.controller;
 
 import com.example.demo1.HelloApplication;
-import com.example.demo1.connection.DatabaseConnection;
 import com.example.demo1.interfases.OfficialsInterface;
 import com.example.demo1.model.Officials;
-import com.example.demo1.mpl.FactoryDAO;
-import com.example.demo1.mpl.OfficialImp;
+import com.example.demo1.dao.FactoryDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -13,7 +11,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import org.controlsfx.control.action.Action;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -22,11 +19,6 @@ import org.json.simple.parser.ParseException;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class HelloController {
     @FXML

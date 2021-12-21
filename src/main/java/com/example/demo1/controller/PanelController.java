@@ -2,7 +2,7 @@ package com.example.demo1.controller;
 
 import com.example.demo1.model.Client;
 import com.example.demo1.model.Officials;
-import com.example.demo1.mpl.FactoryDAO;
+import com.example.demo1.dao.FactoryDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

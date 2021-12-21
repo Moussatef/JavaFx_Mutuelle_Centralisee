@@ -1,11 +1,9 @@
 package com.example.demo1.dao;
 
 import com.example.demo1.model.Client;
-import com.example.demo1.mpl.FactoryDAO;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
@@ -14,7 +12,6 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class ClientDAOTest {
 
