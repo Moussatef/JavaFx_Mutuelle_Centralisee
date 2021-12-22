@@ -1,5 +1,6 @@
 package com.example.demo1.controller;
 
+import com.example.demo1.mail.MaileSend;
 import com.example.demo1.model.Client;
 import com.example.demo1.model.Officials;
 import com.example.demo1.dao.FactoryDAO;
@@ -309,10 +310,23 @@ public class PanelController implements Initializable {
                     }
                 });
             }
+
+            sendMailToClient(client.getEmail(),"Register client",client,officials.getEntity().getEnt_name());
+
+            statisticsDateStart();
+            statisticsCreatedDay();
+            statisticsCreatedYear();
         }
-        statisticsDateStart();
-        statisticsCreatedDay();
-        statisticsCreatedYear();
+
+
+    }
+
+    public void sendMailToClient(String mail,String subject,Client client,String entity){
+        try {
+            MaileSend.sendMail(mail,subject,client,entity);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void fillCmb() {

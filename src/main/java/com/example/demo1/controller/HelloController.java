@@ -1,11 +1,13 @@
 package com.example.demo1.controller;
 
 import com.example.demo1.HelloApplication;
-import com.example.demo1.interfases.OfficialsInterface;
+//import com.example.demo1.interfases.OfficialsInterface;
+import com.example.demo1.mail.MaileSend;
 import com.example.demo1.model.Officials;
 import com.example.demo1.dao.FactoryDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -19,8 +21,10 @@ import org.json.simple.parser.ParseException;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class HelloController {
+public class HelloController implements Initializable {
     @FXML
     private Button btn_exit;
     @FXML
@@ -94,4 +98,8 @@ public class HelloController {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }

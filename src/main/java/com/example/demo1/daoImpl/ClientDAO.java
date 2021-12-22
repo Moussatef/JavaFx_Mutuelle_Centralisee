@@ -188,7 +188,9 @@ public class ClientDAO extends DAO<Client> {
                 statement.setString(10, client.getAddress());
                 statement.setDate(11, Date.valueOf(client.getCreated_at()));
                 statement.setInt(12, client.getOfficial_id());
+
                 statement.executeUpdate();
+
                 return client;
 
             } catch (Exception e) {
