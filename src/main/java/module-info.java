@@ -8,6 +8,8 @@ module com.example.demo1 {
     requires java.sql;
     requires java.mail;
 
+    requires apache.log4j.extras;
+
     opens com.example.demo1 to javafx.fxml;
     exports com.example.demo1;
     exports com.example.demo1.controller;

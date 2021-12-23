@@ -38,7 +38,7 @@ public class MaileSend {
 
             protected PasswordAuthentication getPasswordAuthentication() {
 
-                return new PasswordAuthentication("data.formation.consulting@gmail.com", "rvzxkytzhsswtvgv");
+                return new PasswordAuthentication("exampl@gmail.com", "*****************");
 
             }
 

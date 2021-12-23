@@ -4,8 +4,6 @@ import com.example.demo1.model.Officials;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.mockito.junit.MockitoJUnit;
-import org.mockito.junit.MockitoRule;
 
 import static org.junit.Assert.*;
 
@@ -14,7 +12,6 @@ public class OfficialsDAOTest {
 
     Officials officials ;
 
-    @Rule public MockitoRule rule = MockitoJUnit.rule();
 
 
     @Before

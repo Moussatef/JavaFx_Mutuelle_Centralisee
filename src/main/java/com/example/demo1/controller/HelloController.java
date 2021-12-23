@@ -1,7 +1,8 @@
 package com.example.demo1.controller;
-
+import org.apache.log4j.Logger;
 import com.example.demo1.HelloApplication;
 //import com.example.demo1.interfases.OfficialsInterface;
+import com.example.demo1.log.log4j;
 import com.example.demo1.mail.MaileSend;
 import com.example.demo1.model.Officials;
 import com.example.demo1.dao.FactoryDAO;
@@ -36,6 +37,9 @@ public class HelloController implements Initializable {
     @FXML
     private Label message;
 
+
+
+
     public void onExitClick(ActionEvent event) {
         Stage stage = (Stage) btn_exit.getScene().getWindow();
         stage.close();
@@ -44,18 +48,26 @@ public class HelloController implements Initializable {
     public void userLogIn(ActionEvent event) throws IOException {
         if ((this.input_email.getText().isEmpty() || this.input_password.getText().isEmpty())) {
             message.setText("Please fill all the fields");
+            log.warn("Warning fields empty");
 
         }else{
             validateLogin(this.input_email.getText(),this.input_password.getText());
         }
     }
+
     public void validateLogin(String email,String password) throws IOException {
         HelloApplication form = new HelloApplication();
         Officials officials = FactoryDAO.getOfficialByEmailAndPassword(email,password);
 
         if (officials != null){
+            log.debug(" [login][FORM]" );
+            log.info("[ACTION][Login] [STATUS] [successfully] [from] [official] [email] ["+officials.getEmail()+"] [ ID ] ["+officials.getOfficial_id()+"]");
+
             form.changeScene("panelControlle.fxml");
+
+
         }else {
+            log.warn("Invalid Login");
             System.out.println("Invalid Login, try again");
             message.setText("Invalide login ,Try again !");
         }
@@ -90,16 +102,20 @@ public class HelloController implements Initializable {
                     message.setText("Invalide login ,Try again !");
                 }
             }
-
-
         } catch (FileNotFoundException | ParseException e) {
+
             e.printStackTrace();
+
         }
     }
 
-
+    static final Logger log = Logger.getLogger(log4j.class.getName());
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        log.debug("Start app " );
+        log.info("Application start");
+
 
     }
 }

@@ -4,14 +4,11 @@ import com.example.demo1.model.Client;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.mockito.junit.MockitoJUnit;
-import org.mockito.junit.MockitoRule;
 
 import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
 
 public class ClientDAOTest {
 
@@ -21,8 +18,7 @@ public class ClientDAOTest {
 
      Client clientTest =  new Client("89-3861550",  "WI5803020", null,  "Barry", "Gillebride","+62 734 892 0947" , "Barry.GilleKide@gmail.com",  "11272 Hermina Crossing",  "Babbleopia" ,  LocalDate.parse("2021-11-13"), 5, LocalDate.now());
 
-    @Rule
-    public MockitoRule rule = MockitoJUnit.rule();
+
 
     @Before
     public void setUp(){
