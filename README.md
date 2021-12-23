@@ -1,4 +1,14 @@
 # JavaFx_Mutuelle_Centralisee
+photos de l'application
+
+
+<img width="40%" align="right" alt="Github" src="https://raw.githubusercontent.com/onimur/.github/master/.resources/git-header.svg" />
+
+
+
+
+
+
 
 ## Contexte du projet
 
@@ -37,16 +47,45 @@ Suite à la deuxième version du Mutuelle centralisée, le client est satisfait 
 Un fonctionnaire d’une entité de mutuelle (par exemple : OMFAM) peut se connecter sur la plateforme. (Les fonctionnaires sont déjà sauvegardés dans un fichier JSON) ressource 2.
 
 ## Page 1 : (Authentification) 
+ <img width="55%" align="left" alt="Github" src="https://github.com/Moussatef/JavaFx_Mutuelle_Centralisee/blob/main/src/main/resources/com/example/demo1/assets/Screenshot_41.png" />
   Ça sera la même chose sauf qu’il doit être à travers une base de données (MySQL), et il faut hacher les mots de passe des fonctionnaires.
   
-## ++Page 2 / onglet 1 : (Création d’un compte pour un client) :
+ ## Page 2 / onglet 2 (Home ):
+  - informations de fonctionnaire authentifie et l'entité info 
+   <img width="100%" align="center" alt="Github" src="https://github.com/Moussatef/JavaFx_Mutuelle_Centralisee/blob/main/src/main/resources/com/example/demo1/assets/Screenshot_42.png" />
+
+
+  
+## Page 2 / onglet 2 : (Création d’un compte pour un client) :
+
 Un fonctionnaire peut créer un nouveau client suite à la demande d’organisme mère du client (Par exemple : Ahmed a commencé son nouveau boulot chez la Gendarmerie royale marocaine, cette dernière vont envoyer une demande de création d’un compte à l’OMFAM, et le fonctionnaire va s’occuper du reste.
+<img width="100%" align="center" alt="Github" src="https://github.com/Moussatef/JavaFx_Mutuelle_Centralisee/blob/main/src/main/resources/com/example/demo1/assets/Screenshot_60.png" />
 
-##Page 2 / onglet 2 : (Afficher les client enregistrés):
+- L’envoie d’un mail à le client à chaque nouvelle inscription.
 
-    - Il faut alimenter** la base des clients au début pour avoir au moins 200 clients** avec des données différents (vous pouvez utiliser un import csv ou Excel ou autre …)
-    - Ça sera un select à partir de la base et il faut ajouter un filtre d’affichage par nom d’entreprise et une recherche par CIN / prénom / nom / email ou bien une jointure des filtres. Il faut créer un plan du test pour toutes les fonctionnalités de l’application utilisant JUnit.
-##Page 3 : Statistiques (help ressource 2)
+<img width="60%" align="center" alt="Github" src="https://github.com/Moussatef/JavaFx_Mutuelle_Centralisee/blob/main/src/main/resources/com/example/demo1/assets/Screenshot_61.png" />
+
+
+## 
+## 
+
+
+## Page 2 / onglet 3 : (Afficher les client enregistrés):
+
+<img width="100%" align="right" alt="Github" src="https://github.com/Moussatef/JavaFx_Mutuelle_Centralisee/blob/main/src/main/resources/com/example/demo1/assets/Screenshot_58.png" />
+
+## 
+## 
+
+
+- Il faut alimenter  la base des clients au début pour avoir au moins 200 clients 
+  avec des données différents (vous pouvez utiliser un import csv ou Excel ou autre)
+- Ça sera un select à partir de la base et il faut ajouter un filtre d’affichage par nom d’entreprise et une recherche 
+   par CIN / prénom / nom / email ou bien une jointure des filtres. Il faut créer un plan du test pour toutes les fonctionnalités de l’application utilisant jUnit
+    
+## Page 2 / onglet 4  : Statistiques (help ressource 2)
+
+<img width="100%" align="right" alt="Github" src="https://github.com/Moussatef/JavaFx_Mutuelle_Centralisee/blob/main/src/main/resources/com/example/demo1/assets/Screenshot_59.png" />
 
 - Ajouter l’attribut (date de l’inscription) dans la table client pour tracer les clients par date, et ajouter un graphe (chart) de votre choix qui va démontrer le nombre d’inscription par date.
 
