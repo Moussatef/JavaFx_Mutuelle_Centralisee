@@ -109,7 +109,7 @@ public class HelloController implements Initializable {
         }
     }
 
-    static final Logger log = Logger.getLogger(log4j.class.getName());
+    static final Logger log = Logger.getLogger(HelloController.class.getName());
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
